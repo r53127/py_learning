@@ -9,16 +9,18 @@ import re
 
 hotelname=input("请输入餐馆名：")
 print_date=input('请输入打印时间：')
+people=input('请输入人数：')
 filename='1.txt'
-open(filename,'w+').write("餐别：晚餐  餐馆名称："+hotelname+'\n')
+open(filename,'w+').write("餐别：晚餐  餐馆名称："+hotelname+'  人数：'+people+'\n')
 open(filename,"a+").write('打印时间：'+print_date+' '+time.strftime("%H:%M:%S", time.localtime())+'\n')
-open(filename,'a+').write('''-----------------------------------
-消费清单   数量     单价      金额  
------------------------------------\n
+open(filename,'a+').write('''--------------------------------------------
+消费清单           数量     单价      金额  
+--------------------------------------------\n
 ''')
 item_list=[]
-for i in range(1,9):#for循环几次
-    a = random.randrange(1,20)#1-9中生成随机数
+dish_sum=0
+while dish_sum<1000:#for循环几次
+    a = random.randrange(1,246)#1-9中生成随机数
     #从文件中对读取第a行的数据
     theline = linecache.getline('dish_menu.txt', a)
     #匹配中文菜名
@@ -27,9 +29,25 @@ for i in range(1,9):#for循环几次
     if dish_item!=None:
         item=dish_item.group()
         if item not in item_list:
-            open(filename,'a+').write(item+'\n')
+            item_price=random.randrange(100,200)
+            dish_sum = dish_sum + item_price
+            if dish_sum<=1000:
+                open(filename,'a+').write(item.ljust(10)+'\000'*(10-len(item))+'1       '+'%s.00' %str(item_price)+'   '+'%s.00' %str(item_price)+'\n')
+            else:
+                open(filename, 'a+').write(
+                    item.ljust(10) + '\000' * (10 - len(item)) + '1       ' + '%s.00' %str(1000-dish_sum+item_price) + '   ' + '%s.00' %str(
+                        1000-dish_sum+item_price) + '\n')
             item_list.append(item)
+
         else:
             continue
     else:
         continue
+open(filename, 'a+').write('''
+--------------------------------------------
+优惠金额：0.00元
+应付金额：1000.00元
+--------------------------------------------
+''')
+#print(dish_sum)
+win32api.ShellExecute(0,"print",filename,'/d:"%s"' %win32print.GetDefaultPrinter(),".",0)
