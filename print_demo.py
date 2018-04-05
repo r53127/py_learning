@@ -18,7 +18,7 @@ if account<=500:
     open(filename,'w+').write("餐别：午餐  餐馆名称："+hotelname+'  人数：'+people+'\n')
 else:
     open(filename, 'w+').write("餐别：晚餐  餐馆名称：" + hotelname + '  人数：' + people + '\n')
-open(filename,"a+").write('打印时间：'+print_date+' '+time.strftime("%H:%M:%S", time.localtime())+'\n')
+open(filename,"a+").write('打印时间：'+print_date[0:4]+'-'+print_date[4:6]+'-'+print_date[6:8]+' '+time.strftime("%H:%M:%S", time.localtime())+'\n')
 open(filename,'a+').write('''--------------------------------------------
 消费清单           数量     单价      金额  
 --------------------------------------------\n
