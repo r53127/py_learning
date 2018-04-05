@@ -26,9 +26,9 @@ open(filename,'a+').write('''--------------------------------------------
 item_list=[]
 dish_sum=0
 
-while dish_sum<account:#for循环几次
-        a = random.randrange(1,246)#1-9中生成随机数
-        #从文件中对读取第a行的数据
+while dish_sum<account:#未达到总金额一直循环
+        a = random.randrange(1,246)#随机盘菜
+        #从文件中对读取第a行的菜名
         theline = linecache.getline('dish_menu.txt', a)
         #匹配中文菜名
         dish_item=re.search("[\u4e00-\u9fa5]+",theline)
