@@ -59,7 +59,7 @@ while dish_sum<account:#未达到总金额一直循环
                     #如果总金额未达到输入金额则直接写入
                     open(filename,'a+').write(item.ljust(10)+'\000'*(10-len(item))+'1       '+'%s.00' %str(item_price)+'   '+'%s.00' %str(item_price)+'\n')
                 else:
-                    #如果总金额超出输入金额则按最后一道菜按（输入金额-总计）算
+                    #如果总金额超出输入金额则最后一道菜按（输入金额-总计）算
                     if account-dish_sum+item_price>50:
                         open(filename, 'a+').write(
                             item.ljust(10) + '\000' * (10 - len(item)) + '1       ' + '%s.00' %str(account-dish_sum+item_price) + '     ' + '%s.00' %str(
