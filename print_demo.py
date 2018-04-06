@@ -6,21 +6,13 @@ import win32api
 import win32print
 
 #linecache只能读取UTF-8文件
-def generate_item_price(item_number):
-    if 1<=item_number<=13:
-        item_price = random.randrange(50, 100)
-    elif 14<=item_number<=29:
-        item_price = random.randrange(30, 50)
-    elif 30<=item_number<=37:
-        item_price = random.randrange(150, 200)
-    elif 38<=item_number<=58:
-        item_price = random.randrange(50, 100)
-    elif 59<=item_number<=114:
-        item_price = random.randrange(70, 100)
-    elif 207<=item_number<=222:
-        item_price = random.randrange(70, 100)
-    elif 153<=item_number<=177:
-        item_price = random.randrange(50, 100)
+def generate_item_price(item_number,item):
+    if re.search('[\u867E\u87F9\u9C7F\u6591\u9E3D]',item) != None: #虾蟹鱿石斑鸽
+        item_price = random.randrange(100, 200)
+    elif re.search('[\u9E21\u725B\u9C7C\u6392\u7B19\u868C\u84B8\u7F8A\u9E2D]',item) != None:  #鱼鸡牛排骨笙蚌蒸羊鸭
+        item_price = random.randrange(50, 80)
+    elif re.search('[\u53C2]', item) != None:   #参
+        item_price = random.randrange(150, 250)
     else:
         item_price = random.randrange(30, 50)
     return item_price;
@@ -53,7 +45,7 @@ while dish_sum<account:#未达到总金额一直循环
         if dish_item != None:
             item=dish_item.group()
             if item not in item_list:
-                item_price=generate_item_price(a)
+                item_price=generate_item_price(a,item)
                 dish_sum = dish_sum + item_price
                 if dish_sum<=account:
                     #如果总金额未达到输入金额则直接写入
