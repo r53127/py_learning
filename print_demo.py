@@ -6,7 +6,24 @@ import win32api
 import win32print
 
 #linecache只能读取UTF-8文件
-
+def generate_item_price(item_number):
+    if 1<=item_number<=13:
+        item_price = random.randrange(50, 100)
+    elif 14<=item_number<=29:
+        item_price = random.randrange(30, 50)
+    elif 30<=item_number<=37:
+        item_price = random.randrange(150, 200)
+    elif 38<=item_number<=58:
+        item_price = random.randrange(50, 100)
+    elif 59<=item_number<=114:
+        item_price = random.randrange(70, 100)
+    elif 207<=item_number<=222:
+        item_price = random.randrange(70, 100)
+    elif 153<=item_number<=177:
+        item_price = random.randrange(50, 100)
+    else:
+        item_price = random.randrange(30, 50)
+    return item_price;
 
 hotelname=input("请输入餐馆名：")
 print_date=input('请输入打印时间：')
@@ -33,10 +50,10 @@ while dish_sum<account:#未达到总金额一直循环
         #匹配中文菜名
         dish_item=re.search("[\u4e00-\u9fa5]+",theline)
         #如果匹配成功则写入
-        if dish_item!=None:
+        if dish_item != None:
             item=dish_item.group()
             if item not in item_list:
-                item_price=random.randrange(100,200)
+                item_price=generate_item_price(a)
                 dish_sum = dish_sum + item_price
                 if dish_sum<=account:
                     #如果总金额未达到输入金额则直接写入
@@ -52,7 +69,7 @@ while dish_sum<account:#未达到总金额一直循环
                         item_last='小碟'
                         open(filename, 'a+').write(
                             item_last.ljust(10) + '\000' * (10 - len(item_last)) + '1       ' + '%s.00' % str(
-                                account - dish_sum + item_price) + '     ' + '%s.00' % str(
+                                account - dish_sum + item_price) + '   ' + '%s.00' % str(
                                 account - dish_sum + item_price) + '\n')
                 item_list.append(item)
             else:
