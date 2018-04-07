@@ -8,7 +8,7 @@ import win32print
 
 
 #生成菜价
-def generate_item_price(item_number,item):
+def generate_item_price(item):
     if re.search('[\u867E\u87F9\u9C7F\u6591\u9E3D]',item) != None: #虾蟹鱿石斑鸽
         item_price = random.randrange(100, 200)
     elif re.search('[\u9E21\u725B\u9C7C\u6392\u7B19\u868C\u84B8\u7F8A\u9E2D]',item) != None:  #鱼鸡牛排骨笙蚌蒸羊鸭
@@ -58,7 +58,8 @@ item_list=[]
 dish_sum=0
 
 while dish_sum<account:#未达到总金额一直循环
-        a = random.randrange(1,246)#随机盘菜
+        lines=len(open(filename).readlines())
+        a = random.randrange(1,lines)#随机盘菜
         #从文件中对读取第a行的菜名
         theline = linecache.getline('dish_menu.txt', a)
         #匹配中文菜名
@@ -67,7 +68,7 @@ while dish_sum<account:#未达到总金额一直循环
         if dish_item != None:
             item=dish_item.group()
             if item not in item_list:
-                item_price=generate_item_price(a,item)
+                item_price=generate_item_price(item)
                 dish_sum = dish_sum + item_price
                 if dish_sum<=account:
                     #如果总金额未达到输入金额则直接写入
