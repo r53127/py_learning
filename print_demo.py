@@ -5,6 +5,7 @@ import re
 import time
 import win32api
 import win32print
+import os
 
 
 #生成菜价
@@ -17,7 +18,7 @@ def generate_item_price(item):
         item_price = random.randrange(150, 250)
     else:
         item_price = random.randrange(30, 50)
-    return item_price;
+    return item_price
 
 #按格式对齐写入
 def write_file(filename_tmp,item_tmp,item_price_tmp):
@@ -26,6 +27,11 @@ def write_file(filename_tmp,item_tmp,item_price_tmp):
                                +'%s.00' % str(item_price_tmp) + '\000'*(8-len(str(item_price_tmp)))
                                + '%s.00' % str(item_price_tmp) + '\n')
     return
+
+dish_file='dish_menu.txt'
+while not os.path.exists(dish_file):
+    print("请把菜谱文件命名为dish_menu.txt并和程序放在一起再继续...")
+    os.system('pause')
 
 hotelname=input("请输入酒店名：")
 while re.match(r'\w+',hotelname) == None:
@@ -45,6 +51,8 @@ while re.match(r'[\d]+',sum_input) == None:
 
 account=int(sum_input)
 filename='1.txt'
+
+
 if account<=500:
     open(filename,'w+').write("餐别：午餐  酒店名称："+hotelname+'  人数：'+people+'\n')
 else:
@@ -61,7 +69,7 @@ while dish_sum<account:#未达到总金额一直循环
         lines=len(open(filename).readlines())
         a = random.randrange(1,lines)#随机盘菜
         #从文件中对读取第a行的菜名
-        theline = linecache.getline('dish_menu.txt', a)
+        theline = linecache.getline(dish_file, a)
         #匹配中文菜名
         dish_item=re.search("[\u4e00-\u9fa5]+",theline)
         #如果匹配成功则写入
