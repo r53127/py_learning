@@ -34,19 +34,19 @@ while not os.path.exists(dish_file):
     os.system('pause')
 
 hotelname=input("请输入酒店名：")
-while re.match(r'\w+',hotelname) == None:
+while not re.match(r'\w+',hotelname):
     hotelname=input("请输入正确的酒店名：")
 
 print_date=input('请输入打印时间（如20171201)：')
-while re.match(r'^201[\d](0[\d]|1[0-2])(0[\d]|1[\d]|2[\d]|3[0-1])$',print_date) == None:
+while  not re.match(r'^201[\d](0[\d]|1[0-2])(0[\d]|1[\d]|2[\d]|3[0-1])$',print_date):
     print_date=input('请输入正确的打印时间（如20171201)：')
 
 people=input('请输入人数：')
-while re.match(r'[\d]+',people) == None:
+while not re.match(r'[\d]+',people) :
     people = input('请输入正确的人数：')
 
 sum_input=input('请输入用餐金额：')
-while re.match(r'[\d]+',sum_input) == None:
+while not re.match(r'[\d]+',sum_input):
     sum_input = input('请输入正确的金额：')
 
 account=int(sum_input)
@@ -73,7 +73,7 @@ while dish_sum<account:#未达到总金额一直循环
         #匹配中文菜名
         dish_item=re.search("[\u4e00-\u9fa5]+",theline)
         #如果匹配成功则写入
-        if dish_item != None:
+        if dish_item:
             item=dish_item.group()
             if item not in item_list:
                 item_price=generate_item_price(item)
