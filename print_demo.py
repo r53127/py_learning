@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: <encoding name> -*-
+# -*- coding: UTF-8 -*-
 import linecache
 #linecache只能读取UTF-8文件
 import random
@@ -28,10 +28,12 @@ def generate_item_price(item):
 
 #按格式对齐写入
 def write_file(filename_tmp,item_tmp,item_price_tmp):
-    open(filename_tmp, 'a+').write(item_tmp.ljust(10) + '\000' * (10 - len(item_tmp))
-                               + '1      '
-                               +'%s.00' % str(item_price_tmp) + '\000'*(8-len(str(item_price_tmp)))
-                               + '%s.00' % str(item_price_tmp) + '\n')
+ #   open(filename_tmp, 'a+').write(item_tmp.ljust(10) + '\000' * (10 - len(item_tmp))
+ #                               + '1      '
+ #                              +'%s.00' % str(item_price_tmp) + '\000'*(8-len(str(item_price_tmp)))
+ #                              + '%s.00' % str(item_price_tmp) + '\n')
+
+    open(filename_tmp,'a+').write('{:<10}'.format(item_tmp)+ ' ' * (10 - len(item_tmp))+ '1   '+'{:>10.2f}'.format(item_price_tmp)+'{:>10.2f}'.format(item_price_tmp)+ '\n')
     return
 
 def generate_time(account_tmp):
