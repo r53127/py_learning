@@ -4,7 +4,7 @@ import linecache
 #linecache只能读取UTF-8文件
 import random
 import re
-import time
+#import time
 import win32api
 import win32print
 import os
@@ -126,4 +126,4 @@ open(filename, 'a+').write('''
 open(filename,'a+').write(str(account)+'''元
 --------------------------------------------
     ''')
-#win32api.ShellExecute(0,"print",filename,'/d:"%s"' %win32print.GetDefaultPrinter(),".",0)
+win32api.ShellExecute(0,"print",filename,'/d:"%s"' %win32print.GetDefaultPrinter(),".",0)
