@@ -129,7 +129,6 @@
 1.龙虾干烧伊面Lobster Teriyaki Noodle 
 2.上汤龙虾捞面Lobster Noodle 
 3.杨州炒饭Yang Chow Fried Rice 
-4.虾仁炒饭Shrimp Fried Rice 
 5.咸鱼鸡粒炒饭Salted Egg Chicken Fried Rice 
 6.蕃茄牛肉炒饭Tomato w/ Beef Fried Rice 
 7.厨师炒饭House Fried Rice 
