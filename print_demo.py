@@ -59,7 +59,7 @@ while not re.match(r'\w+',hotelname):
     hotelname=input("请输入正确的酒店名：")
 
 print_date=input('请输入打印时间（如20171201)：')
-while  not re.match(r'^201[\d](0[\d]|1[0-2])(0[\d]|1[\d]|2[\d]|3[0-1])$',print_date):
+while  not re.match(r'^201[\d](0[1-9]|1[0-2])(0[1-9]|1[\d]|2[\d]|3[0-1])$',print_date):
     print_date=input('请输入正确的打印时间（如20171201)：')
 
 #people=input('请输入人数：')
