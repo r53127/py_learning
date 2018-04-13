@@ -1,5 +1,3 @@
-#!/usr/bin/python
-# -*- coding: UTF-8 -*-
 import linecache
 #linecache只能读取UTF-8文件
 import random
