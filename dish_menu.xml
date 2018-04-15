@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="dish_print.xsl"?>
+<dish_menu hotel_name="蛙舍" meal_time="2018-03-01 19:52:37" meal_account="900">
+<dish>
+<dish_name>豉汁炒青口</dish_name>
+<dish_num>2</dish_num>
+<dish_price>125.00</dish_price>
+<dish_account>250.00</dish_account>
+</dish>
+</dish_menu>
