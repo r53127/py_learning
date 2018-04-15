@@ -7,4 +7,16 @@
 <dish_price>125.00</dish_price>
 <dish_account>250.00</dish_account>
 </dish>
+<dish>
+<dish_name>香煎鲫鱼</dish_name>
+<dish_num>1</dish_num>
+<dish_price>68.00</dish_price>
+<dish_account>68.00</dish_account>
+</dish>
+<dish>
+<dish_name>炒杂菜</dish_name>
+<dish_num>1</dish_num>
+<dish_price>79.00</dish_price>
+<dish_account>79.00</dish_account>
+</dish>
 </dish_menu>

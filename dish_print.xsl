@@ -23,28 +23,23 @@
 
 <body>
 <p>餐馆名称</p>
-<table width="200" border="0" cellspacing="0">
+<table border="0" cellspacing="0">
   <tr>
-    <td>品名</td>
-    <td>规格</td>
-    <td>数量</td>
-    <td>单价</td>
-    <td>金额</td>
+    <td><div align="center">品名</div></td>
+    <td><div align="center">规格</div></td>
+    <td><div align="center">数量</div></td>
+    <td><div align="center">单价</div></td>
+    <td><div align="center">金额</div></td>
   </tr>
+  <xsl:for-each select="dish_menu/dish">
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td><div align="left"><xsl:value-of select="dish_name"/></div></td>
+    <td><div align="center">份</div></td>
+    <td><div align="center"><xsl:value-of select="dish_num"/></div></td>
+    <td><div align="right"><xsl:value-of select="dish_price"/></div></td>
+    <td><div align="right"><xsl:value-of select="dish_account"/></div></td>
   </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>dish_menu/dish/dish_name
+  </xsl:for-each>
 </table>
 </body>
 </html>
