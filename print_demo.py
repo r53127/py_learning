@@ -1,5 +1,6 @@
+# coding=utf8
 import linecache
-#linecache只能读取UTF-8文件
+##linecache只能读取UTF-8文件
 import random
 import re
 #import time
@@ -52,19 +53,19 @@ while not os.path.exists(dish_file):
     print("请把菜谱文件命名为dish_menu.txt并和程序放在一起再继续...")
     os.system('pause')
 
-hotelname=input("请输入酒店名：")
+hotelname=raw_input("请输入酒店名：")
 while not re.match(r'\w+',hotelname):
     hotelname=input("请输入正确的酒店名：")
 
-print_date=input('请输入打印时间（如20171201)：')
+print_date=raw_input('请输入打印时间（如20171201)：')
 while  not re.match(r'^201[\d](0[1-9]|1[0-2])(0[1-9]|1[\d]|2[\d]|3[0-1])$',print_date):
-    print_date=input('请输入正确的打印时间（如20171201)：')
+    print_date=raw_input('请输入正确的打印时间（如20171201)：')
 
 #people=input('请输入人数：')
 #while not re.match(r'[\d]+',people) :
 #   people = input('请输入正确的人数：')
 #
-sum_input=input('请输入用餐金额：')
+sum_input=raw_input('请输入用餐金额：')
 while not re.match(r'[\d]+',sum_input):
     sum_input = input('请输入正确的金额：')
 
