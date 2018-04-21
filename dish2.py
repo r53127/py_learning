@@ -31,8 +31,8 @@ def generate_dish(item_tmp,item_price_tmp):
     xml_str=''
     xml_str=xml_str+"<dish><dish_name>"+item_tmp+"</dish_name>"
     xml_str=xml_str+"<dish_num>1</dish_num>"
-    xml_str=xml_str+"<dish_price>"+str(item_price_tmp)+"</dish_price>"
-    xml_str=xml_str+"<dish_account>"+str(item_price_tmp)+"</dish_account></dish>"+"\n"
+    xml_str=xml_str+"<dish_price>"+str(item_price_tmp)+".00</dish_price>"
+    xml_str=xml_str+"<dish_account>"+str(item_price_tmp)+".00</dish_account></dish>"+"\n"
     return xml_str
 
 def generate_time(account_tmp):
@@ -78,7 +78,7 @@ meal_time=print_date[0:4]+'-'+print_date[4:6]+'-'+print_date[6:8]+' '+generate_t
 
 xml_tmp=xml_tmp+"<dish_menu hotel_name=\""+hotelname+"\""
 xml_tmp=xml_tmp+" meal_time=\""+meal_time+"\""
-xml_tmp=xml_tmp+" meal_account=\""+sum_input+"\""
+xml_tmp=xml_tmp+" meal_account=\""+sum_input+".00\""
 xml_tmp=xml_tmp+" meal_type=\""+meal_type+"\">"+"\n"
 
 

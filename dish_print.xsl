@@ -20,39 +20,78 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title>Untitled Document</title>
 <style type="text/css">
-<!--
-.STYLE1 {
-	font-family: "新宋体";
+.STYLE2 {
 	font-size: 24px;
-	font-weight: bold;
+	font-family: "宋体";
 }
--->
 </style>
 </head>
 
 <body>
-<div>
-<p align="center" class="STYLE1"><xsl:value-of select="dish_menu/@hotel_name"/></p>
-<p align="center" class="STYLE1">结账单</p>
-<table border="0" cellspacing="0">
-  <tr>
-    <td><div align="left">品名</div></td>
-    <td><div align="center">规格</div></td>
-    <td><div align="center">数量</div></td>
-    <td><div align="center">单价</div></td>
-    <td><div align="center">金额</div></td>
-  </tr>
-  <xsl:for-each select="dish_menu/dish">
-  <tr>
-    <td><div align="left"><xsl:value-of select="dish_name"/></div></td>
-    <td><div align="center">份</div></td>
-    <td><div align="center"><xsl:value-of select="dish_num"/></div></td>
-    <td><div align="right"><xsl:value-of select="dish_price"/></div></td>
-    <td><div align="right"><xsl:value-of select="dish_account"/></div></td>
-  </tr>
-  </xsl:for-each>
-</table>
-</div>
+
+
+
+  <table border="0" cellspacing="0" width="385">
+    <tr>
+      <td colspan="5">	<p align="center" class="STYLE2" >
+	<xsl:value-of select="dish_menu/@hotel_name"/>结账单</p></td>
+      </tr>
+    <tr>
+      <td>桌号：</td>
+      <td><div align="left">A22</div></td>
+      <td>&nbsp;</td>
+      <td>餐别：</td>
+      <td><div align="left"><xsl:value-of select="dish_menu/@meal_type"/></div></td>
+    </tr>
+    <tr>
+      <td>结账时间：</td>
+      <td colspan="4"><xsl:value-of select="dish_menu/@meal_time"/></td>
+      </tr>
+    <tr>
+      <td colspan="5"><hr style="border-top-style:dotted" /></td>
+      </tr>
+    <tr>
+      <td width="100"><div align="left">品名</div></td>
+        <td><div align="center">规格</div></td>
+        <td><div align="center">数量</div></td>
+        <td><div align="center">单价</div></td>
+        <td><div align="center">金额</div></td>
+      </tr>
+    <xsl:for-each select="dish_menu/dish">
+      <tr>
+        <td><div align="left"><xsl:value-of select="dish_name"/></div></td>
+        <td><div align="center">份</div></td>
+        <td><div align="center" ><xsl:value-of select="dish_num"/></div></td>
+        <td><div align="right"><xsl:value-of select="dish_price"/></div></td>
+        <td><div align="right"><xsl:value-of select="dish_account"/></div></td>
+      </tr>
+	  </xsl:for-each>
+      <tr>
+        <td colspan="5"><hr style="border-top-style:dotted" /></td>
+        </tr>
+      <tr>
+        <td>原价合计：</td>
+        <td colspan="2"><xsl:value-of select="dish_menu/@meal_account"/></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="5"><hr style="border-top-style:dotted" /></td>
+      </tr>
+      <tr>
+        <td>刷卡支付：</td>
+        <td colspan="2"><xsl:value-of select="dish_menu/@meal_account"/></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>实收支付：</strong></td>
+        <td colspan="2"><strong><xsl:value-of select="dish_menu/@meal_account"/></strong></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+  </table>
+
 </body>
 </html>
 

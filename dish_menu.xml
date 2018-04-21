@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?> 
-<dish_menu hotel_name="asdfasdf" meal_time="2019-01-01 20:03:48" meal_account="1000" meal_type="晚餐">
-<dish><dish_name>豉汁炒三鲜</dish_name><dish_num>1</dish_num><dish_price>86</dish_price><dish_account>86</dish_account></dish>
-<dish><dish_name>上汤芥菜胆</dish_name><dish_num>1</dish_num><dish_price>67</dish_price><dish_account>67</dish_account></dish>
-<dish><dish_name>酸甜咕噜虾</dish_name><dish_num>1</dish_num><dish_price>152</dish_price><dish_account>152</dish_account></dish>
-<dish><dish_name>京都上肉排</dish_name><dish_num>1</dish_num><dish_price>117</dish_price><dish_account>117</dish_account></dish>
-<dish><dish_name>红烧石岐项鸽</dish_name><dish_num>1</dish_num><dish_price>153</dish_price><dish_account>153</dish_account></dish>
-<dish><dish_name>白云凤爪</dish_name><dish_num>1</dish_num><dish_price>65</dish_price><dish_account>65</dish_account></dish>
-<dish><dish_name>豉椒鲜鱿</dish_name><dish_num>1</dish_num><dish_price>176</dish_price><dish_account>176</dish_account></dish>
-<dish><dish_name>椒盐鲜鱿</dish_name><dish_num>1</dish_num><dish_price>155</dish_price><dish_account>155</dish_account></dish>
-<dish><dish_name>小碟</dish_name><dish_num>1</dish_num><dish_price>29</dish_price><dish_account>29</dish_account></dish>
+<dish_menu hotel_name="丽景大酒楼" meal_time="2018-04-13 21:47:32" meal_account="1000.00" meal_type="晚餐">
+<dish><dish_name>生菜丝炒牛肉饭</dish_name><dish_num>1</dish_num><dish_price>105.00</dish_price><dish_account>105.00</dish_account></dish>
+<dish><dish_name>中式牛柳</dish_name><dish_num>1</dish_num><dish_price>147.00</dish_price><dish_account>147.00</dish_account></dish>
+<dish><dish_name>梅菜扣肉</dish_name><dish_num>1</dish_num><dish_price>73.00</dish_price><dish_account>73.00</dish_account></dish>
+<dish><dish_name>四川炒鸡球</dish_name><dish_num>1</dish_num><dish_price>112.00</dish_price><dish_account>112.00</dish_account></dish>
+<dish><dish_name>招牌炒面</dish_name><dish_num>1</dish_num><dish_price>68.00</dish_price><dish_account>68.00</dish_account></dish>
+<dish><dish_name>东江豆腐煲</dish_name><dish_num>1</dish_num><dish_price>77.00</dish_price><dish_account>77.00</dish_account></dish>
+<dish><dish_name>椒盐排骨</dish_name><dish_num>1</dish_num><dish_price>131.00</dish_price><dish_account>131.00</dish_account></dish>
+<dish><dish_name>火鸭咸蛋芥菜汤</dish_name><dish_num>1</dish_num><dish_price>133.00</dish_price><dish_account>133.00</dish_account></dish>
+<dish><dish_name>椒盐虾</dish_name><dish_num>1</dish_num><dish_price>154.00</dish_price><dish_account>154.00</dish_account></dish>
 </dish_menu>
