@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="gb2312"?><!-- DWXMLSource="file:///C|/Users/Administrator/Desktop/dish_menu.xml" -->
+<?xml version="1.0" encoding="utf-8"?><!-- DWXMLSource="file:///C|/Users/Administrator/Desktop/dish_menu.xml" -->
 <!DOCTYPE xsl:stylesheet  [
 	<!ENTITY nbsp   "&#160;">
 	<!ENTITY copy   "&#169;">
@@ -12,35 +12,47 @@
 	<!ENTITY euro   "&#8364;">
 ]>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-<xsl:output method="html" encoding="gb2312" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
+<xsl:output method="html" encoding="UTF-8" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
 <xsl:template match="/">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title>Untitled Document</title>
+<style type="text/css">
+<!--
+.STYLE1 {
+	font-family: "æ–°å®‹ä½“";
+	font-size: 24px;
+	font-weight: bold;
+}
+-->
+</style>
 </head>
 
 <body>
-<p>²Í¹ÝÃû³Æ</p>
+<div>
+<p align="center" class="STYLE1"><xsl:value-of select="dish_menu/@hotel_name"/></p>
+<p align="center" class="STYLE1">ç»“è´¦å•</p>
 <table border="0" cellspacing="0">
   <tr>
-    <td><div align="center">Æ·Ãû</div></td>
-    <td><div align="center">¹æ¸ñ</div></td>
-    <td><div align="center">ÊýÁ¿</div></td>
-    <td><div align="center">µ¥¼Û</div></td>
-    <td><div align="center">½ð¶î</div></td>
+    <td><div align="left">å“å</div></td>
+    <td><div align="center">è§„æ ¼</div></td>
+    <td><div align="center">æ•°é‡</div></td>
+    <td><div align="center">å•ä»·</div></td>
+    <td><div align="center">é‡‘é¢</div></td>
   </tr>
   <xsl:for-each select="dish_menu/dish">
   <tr>
     <td><div align="left"><xsl:value-of select="dish_name"/></div></td>
-    <td><div align="center">·Ý</div></td>
+    <td><div align="center">ä»½</div></td>
     <td><div align="center"><xsl:value-of select="dish_num"/></div></td>
     <td><div align="right"><xsl:value-of select="dish_price"/></div></td>
     <td><div align="right"><xsl:value-of select="dish_account"/></div></td>
   </tr>
   </xsl:for-each>
 </table>
+</div>
 </body>
 </html>
 
