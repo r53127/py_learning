@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?> 
-<dish_menu hotel_name="丽景大酒楼" meal_time="2018-04-13 21:47:32" meal_account="1000.00" meal_type="晚餐">
-<dish><dish_name>生菜丝炒牛肉饭</dish_name><dish_num>1</dish_num><dish_price>105.00</dish_price><dish_account>105.00</dish_account></dish>
-<dish><dish_name>中式牛柳</dish_name><dish_num>1</dish_num><dish_price>147.00</dish_price><dish_account>147.00</dish_account></dish>
-<dish><dish_name>梅菜扣肉</dish_name><dish_num>1</dish_num><dish_price>73.00</dish_price><dish_account>73.00</dish_account></dish>
-<dish><dish_name>四川炒鸡球</dish_name><dish_num>1</dish_num><dish_price>112.00</dish_price><dish_account>112.00</dish_account></dish>
-<dish><dish_name>招牌炒面</dish_name><dish_num>1</dish_num><dish_price>68.00</dish_price><dish_account>68.00</dish_account></dish>
-<dish><dish_name>东江豆腐煲</dish_name><dish_num>1</dish_num><dish_price>77.00</dish_price><dish_account>77.00</dish_account></dish>
-<dish><dish_name>椒盐排骨</dish_name><dish_num>1</dish_num><dish_price>131.00</dish_price><dish_account>131.00</dish_account></dish>
-<dish><dish_name>火鸭咸蛋芥菜汤</dish_name><dish_num>1</dish_num><dish_price>133.00</dish_price><dish_account>133.00</dish_account></dish>
-<dish><dish_name>椒盐虾</dish_name><dish_num>1</dish_num><dish_price>154.00</dish_price><dish_account>154.00</dish_account></dish>
+<dish_menu hotel_name="西湖大酒店" meal_time="2018-04-20 19:09:34" meal_account="1000.00" meal_type="晚餐">
+<dish><dish_name>双菇鲜带子</dish_name><dish_num>1</dish_num><dish_price>64.00</dish_price><dish_account>64.00</dish_account></dish>
+<dish><dish_name>柠檬牛肉</dish_name><dish_num>1</dish_num><dish_price>127.00</dish_price><dish_account>127.00</dish_account></dish>
+<dish><dish_name>菜远虾球</dish_name><dish_num>1</dish_num><dish_price>191.00</dish_price><dish_account>191.00</dish_account></dish>
+<dish><dish_name>丝苗白饭</dish_name><dish_num>1</dish_num><dish_price>30.00</dish_price><dish_account>30.00</dish_account></dish>
+<dish><dish_name>鱼腐扒菜胆</dish_name><dish_num>1</dish_num><dish_price>118.00</dish_price><dish_account>118.00</dish_account></dish>
+<dish><dish_name>京都骨</dish_name><dish_num>1</dish_num><dish_price>75.00</dish_price><dish_account>75.00</dish_account></dish>
+<dish><dish_name>柠檬鸡球</dish_name><dish_num>1</dish_num><dish_price>144.00</dish_price><dish_account>144.00</dish_account></dish>
+<dish><dish_name>干扁四季豆</dish_name><dish_num>1</dish_num><dish_price>77.00</dish_price><dish_account>77.00</dish_account></dish>
+<dish><dish_name>时菜鲜鱿</dish_name><dish_num>1</dish_num><dish_price>174.00</dish_price><dish_account>174.00</dish_account></dish>
 </dish_menu>

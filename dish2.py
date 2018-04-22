@@ -6,7 +6,7 @@ import random
 import re
 #import time
 import win32api
-import win32print
+#import win32print
 import os
 
 
@@ -121,6 +121,10 @@ xml_tmp=xml_tmp+"</dish_menu>"
 open(filename, 'w',encoding='UTF-8').write(xml_tmp)
 
 xsl_filename="dish_print.xsl"
+while not os.path.exists(xsl_filename):
+    print("请把格式文件命名为dish_print.xsl并和程序放在一起再继续...")
+    os.system('pause')
+
 html_filename='dish.html'
 
 xml_dom=etree.parse(filename)

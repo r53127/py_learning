@@ -51,11 +51,11 @@
       <td colspan="5"><hr style="border-top-style:dotted" /></td>
       </tr>
     <tr>
-      <td width="100"><div align="left">品名</div></td>
+      <td width="120"><div align="left">品名</div></td>
         <td><div align="center">规格</div></td>
         <td><div align="center">数量</div></td>
-        <td><div align="center">单价</div></td>
-        <td><div align="center">金额</div></td>
+        <td><div align="right">单价</div></td>
+        <td><div align="right">金额</div></td>
       </tr>
     <xsl:for-each select="dish_menu/dish">
       <tr>
