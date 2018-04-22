@@ -28,9 +28,6 @@
 </head>
 
 <body>
-
-
-
   <table border="0" cellspacing="0" width="385">
     <tr>
       <td colspan="5">	<p align="center" class="STYLE2" >
@@ -38,7 +35,17 @@
       </tr>
     <tr>
       <td>桌号：</td>
-      <td><div align="left">A22</div></td>
+      <td id="table_no">
+		<script type="text/javascript">
+		var i=20-Math.ceil(Math.random()*10); 
+		var para=document.createElement("p");
+		var node=document.createTextNode("VIP"+i);
+		para.appendChild(node);
+		
+		var element=document.getElementById("table_no");
+		element.appendChild(para);
+		</script>
+	  </td>
       <td>&nbsp;</td>
       <td>餐别：</td>
       <td><div align="left"><xsl:value-of select="dish_menu/@meal_type"/></div></td>

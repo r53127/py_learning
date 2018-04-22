@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?> 
+<?xml-stylesheet type="text/xsl" href="dish_print.xsl"?>
 <dish_menu hotel_name="西湖大酒店" meal_time="2018-04-20 19:09:34" meal_account="1000.00" meal_type="晚餐">
 <dish><dish_name>双菇鲜带子</dish_name><dish_num>1</dish_num><dish_price>64.00</dish_price><dish_account>64.00</dish_account></dish>
 <dish><dish_name>柠檬牛肉</dish_name><dish_num>1</dish_num><dish_price>127.00</dish_price><dish_account>127.00</dish_account></dish>
