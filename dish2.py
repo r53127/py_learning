@@ -8,7 +8,7 @@ import re
 import win32api
 #import win32print
 import os
-
+import json
 
 #生成菜价
 def generate_item_price(item):
@@ -56,6 +56,29 @@ while not os.path.exists(dish_file):
 hotelname=input("请输入酒店名：")
 while not re.match(r'\w+',hotelname):
     hotelname=input("请输入正确的酒店名：")
+
+hotel_flag=input("是否要输入酒店信息：Y/N ? ")
+while not re.match(r'^[YyNn]$',hotel_flag):
+    hotel_flag=input("是否要输入酒店信息：Y/N ? ")
+
+hotel_tmp=[]
+if re.match(r'[yY]',hotel_flag):
+    hotel_address=input("请输入酒店地址：")
+    hotel_phone=input("请输入酒店电话：")
+    hotel_data={r'hotel_name':hotelname,r'hotel_address':hotel_address,r"hotel_phone":hotel_phone}
+    f=open('hotel_info.json','r')
+    if  f.read()=='':
+        hotel_tmp.append(hotel_data)
+    else:
+        f.close()#文件一定要先关闭，因为if判断的时候文件指针已指到最后
+        f = open('hotel_info.json', 'r')
+        hotel_tmp=json.load(f)
+        hotel_tmp.append(hotel_data)
+        f.close()
+    with open('hotel_info.json','w') as f:
+        json.dump(hotel_tmp, f, ensure_ascii=False)
+
+
 
 print_date=input('请输入打印时间（如20171201)：')
 while  not re.match(r'^201[\d](0[1-9]|1[0-2])(0[1-9]|1[\d]|2[\d]|3[0-1])$',print_date):
