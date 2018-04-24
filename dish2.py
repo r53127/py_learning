@@ -63,7 +63,10 @@ while not re.match(r'\w+', hotelname):
     hotelname = input("请输入正确的酒店名：")
 
 json_filename='hotel_info.json'
-f=open(json_filename,'r')
+if not os.path.exists(json_filename):
+    f = open(json_filename, 'w+')
+else:
+    f = open(json_filename, 'r')
 hotel_info=json.load(f)
 for x in hotel_info:
     y=x['hotel_name']
@@ -83,10 +86,7 @@ if not find_tag:
         hotel_address = input("请输入酒店地址：")
         hotel_phone = input("请输入酒店电话：")
         hotel_data = {r'hotel_name': hotelname, r'hotel_address': hotel_address, r"hotel_phone": hotel_phone}
-        if not os.path.exists(json_filename):
-            f = open(json_filename, 'w+')
-        else:
-            f = open(json_filename,'r')
+        f = open(json_filename,'r')
         if f.read() == '':
             hotel_tmp.append(hotel_data)
         else:
