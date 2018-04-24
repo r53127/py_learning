@@ -1,6 +1,8 @@
 # coding=UTF-8
 import linecache
 # linecache只能读取UTF-8文件
+from typing import Any, Union
+
 from lxml import etree
 import random
 import re
@@ -13,19 +15,19 @@ import json
 
 # 生成菜价
 def generate_item_price(item):
-    if re.search('[\u523A][\u8EAB]|[\u9F99][\u867E]|[\u53C2]', item) != None:  # 刺身|龙虾|参
-        item_price = random.randrange(200, 300)
-    elif re.search('[\u867E\u87F9\u9C7F\u6591\u9E3D]', item) != None:  # 虾蟹鱿石斑鸽
-        item_price = random.randrange(150, 200)
-    elif re.search('[\u9E21\u725B\u9C7C\u6392\u7B19\u868C\u84B8\u7F8A\u9E2D]', item) != None:  # 鱼鸡牛排骨笙蚌蒸羊鸭
-        item_price = random.randrange(100, 150)
-    elif re.search('[\u87F9]|[\u5927][\u867E]', item) != None:  # 蟹|大虾
-        item_price = random.randrange(100, 200)
-    elif re.search('[\u996D]', item) != None:  # 饭
-        item_price = random.randrange(30, 50)
+    if  re.search('[\u523A][\u8EAB]|[\u9F99][\u867E]|[\u53C2]', item) :  # 刺身|龙虾|参
+        item_price_tmp = random.randrange(200, 300)
+    elif re.search('[\u867E\u87F9\u9C7F\u6591\u9E3D]', item) :  # 虾蟹鱿石斑鸽
+        item_price_tmp = random.randrange(150, 200)
+    elif re.search('[\u9E21\u725B\u9C7C\u6392\u7B19\u868C\u84B8\u7F8A\u9E2D]', item) :  # 鱼鸡牛排骨笙蚌蒸羊鸭
+        item_price_tmp = random.randrange(100, 150)
+    elif re.search('[\u87F9]|[\u5927][\u867E]', item) :  # 蟹|大虾
+        item_price_tmp = random.randrange(100, 200)
+    elif re.search('[\u996D]', item) :  # 饭
+        item_price_tmp = random.randrange(30, 50)
     else:
-        item_price = random.randrange(60, 90)
-    return item_price
+        item_price_tmp = random.randrange(60, 90)
+    return item_price_tmp
 
 
 # 盘菜

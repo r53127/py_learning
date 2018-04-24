@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?> 
-<?xml-stylesheet type="text/xsl" href="dish_print.xsl"?>
-<dish_menu hotel_name="西湖大酒店" meal_time="2018-04-20 19:09:34" meal_account="1000.00" meal_type="晚餐">
-<dish><dish_name>双菇鲜带子</dish_name><dish_num>1</dish_num><dish_price>64.00</dish_price><dish_account>64.00</dish_account></dish>
-<dish><dish_name>柠檬牛肉</dish_name><dish_num>1</dish_num><dish_price>127.00</dish_price><dish_account>127.00</dish_account></dish>
-<dish><dish_name>菜远虾球</dish_name><dish_num>1</dish_num><dish_price>191.00</dish_price><dish_account>191.00</dish_account></dish>
-<dish><dish_name>丝苗白饭</dish_name><dish_num>1</dish_num><dish_price>30.00</dish_price><dish_account>30.00</dish_account></dish>
-<dish><dish_name>鱼腐扒菜胆</dish_name><dish_num>1</dish_num><dish_price>118.00</dish_price><dish_account>118.00</dish_account></dish>
-<dish><dish_name>京都骨</dish_name><dish_num>1</dish_num><dish_price>75.00</dish_price><dish_account>75.00</dish_account></dish>
-<dish><dish_name>柠檬鸡球</dish_name><dish_num>1</dish_num><dish_price>144.00</dish_price><dish_account>144.00</dish_account></dish>
-<dish><dish_name>干扁四季豆</dish_name><dish_num>1</dish_num><dish_price>77.00</dish_price><dish_account>77.00</dish_account></dish>
-<dish><dish_name>时菜鲜鱿</dish_name><dish_num>1</dish_num><dish_price>174.00</dish_price><dish_account>174.00</dish_account></dish>
+<dish_menu hotel_name="五一大酒店" meal_time="2018-03-12 20:27:36" meal_account="1000.00" meal_type="晚餐">
+<dish><dish_name>菜远石斑球</dish_name><dish_num>1</dish_num><dish_price>180.00</dish_price><dish_account>180.00</dish_account></dish>
+<dish><dish_name>豉汁凉瓜</dish_name><dish_num>1</dish_num><dish_price>87.00</dish_price><dish_account>87.00</dish_account></dish>
+<dish><dish_name>豆腐牛肉</dish_name><dish_num>1</dish_num><dish_price>130.00</dish_price><dish_account>130.00</dish_account></dish>
+<dish><dish_name>杂锦云吞汤</dish_name><dish_num>1</dish_num><dish_price>88.00</dish_price><dish_account>88.00</dish_account></dish>
+<dish><dish_name>法国海鲜汤</dish_name><dish_num>1</dish_num><dish_price>69.00</dish_price><dish_account>69.00</dish_account></dish>
+<dish><dish_name>豉汁斑球</dish_name><dish_num>1</dish_num><dish_price>178.00</dish_price><dish_account>178.00</dish_account></dish>
+<dish><dish_name>红烧石岐项鸽</dish_name><dish_num>1</dish_num><dish_price>167.00</dish_price><dish_account>167.00</dish_account></dish>
+<dish><dish_name>海鲜炒</dish_name><dish_num>1</dish_num><dish_price>69.00</dish_price><dish_account>69.00</dish_account></dish>
+<dish><dish_name>小碟</dish_name><dish_num>1</dish_num><dish_price>32.00</dish_price><dish_account>32.00</dish_account></dish>
 </dish_menu>
