@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?> 
-<dish_menu hotel_name="五一大酒店" meal_time="2018-03-12 20:27:36" meal_account="1000.00" meal_type="晚餐">
-<dish><dish_name>菜远石斑球</dish_name><dish_num>1</dish_num><dish_price>180.00</dish_price><dish_account>180.00</dish_account></dish>
-<dish><dish_name>豉汁凉瓜</dish_name><dish_num>1</dish_num><dish_price>87.00</dish_price><dish_account>87.00</dish_account></dish>
-<dish><dish_name>豆腐牛肉</dish_name><dish_num>1</dish_num><dish_price>130.00</dish_price><dish_account>130.00</dish_account></dish>
-<dish><dish_name>杂锦云吞汤</dish_name><dish_num>1</dish_num><dish_price>88.00</dish_price><dish_account>88.00</dish_account></dish>
-<dish><dish_name>法国海鲜汤</dish_name><dish_num>1</dish_num><dish_price>69.00</dish_price><dish_account>69.00</dish_account></dish>
-<dish><dish_name>豉汁斑球</dish_name><dish_num>1</dish_num><dish_price>178.00</dish_price><dish_account>178.00</dish_account></dish>
-<dish><dish_name>红烧石岐项鸽</dish_name><dish_num>1</dish_num><dish_price>167.00</dish_price><dish_account>167.00</dish_account></dish>
-<dish><dish_name>海鲜炒</dish_name><dish_num>1</dish_num><dish_price>69.00</dish_price><dish_account>69.00</dish_account></dish>
-<dish><dish_name>小碟</dish_name><dish_num>1</dish_num><dish_price>32.00</dish_price><dish_account>32.00</dish_account></dish>
+<dish_menu hotel_name="皇朝" meal_time="2018-01-01 21:44:49" meal_account="1000.00" meal_type="晚餐">
+<dish><dish_name>素咕噜肉</dish_name><dish_num>1</dish_num><dish_price>78.00</dish_price><dish_account>78.00</dish_account></dish>
+<dish><dish_name>腰果鸡球</dish_name><dish_num>1</dish_num><dish_price>139.00</dish_price><dish_account>139.00</dish_account></dish>
+<dish><dish_name>蒜茸蒸龙虾</dish_name><dish_num>1</dish_num><dish_price>212.00</dish_price><dish_account>212.00</dish_account></dish>
+<dish><dish_name>鸡蓉粟米羹</dish_name><dish_num>1</dish_num><dish_price>131.00</dish_price><dish_account>131.00</dish_account></dish>
+<dish><dish_name>百年好合</dish_name><dish_num>1</dish_num><dish_price>69.00</dish_price><dish_account>69.00</dish_account></dish>
+<dish><dish_name>清蒸龙利</dish_name><dish_num>1</dish_num><dish_price>109.00</dish_price><dish_account>109.00</dish_account></dish>
+<dish><dish_name>菜远鸡球</dish_name><dish_num>1</dish_num><dish_price>145.00</dish_price><dish_account>145.00</dish_account></dish>
+<dish><dish_name>椒盐鲜鱿</dish_name><dish_num>1</dish_num><dish_price>117.00</dish_price><dish_account>117.00</dish_account></dish>
 </dish_menu>

@@ -1,6 +1,6 @@
 from lxml import etree
 xml_filename='dish_menu.xml'
-xsl_filename="dish_print.xsl"
+xsl_filename="dish_print1.xsl"
 html_filename='dish.html'
 
 xmldom=etree.parse(xml_filename)
