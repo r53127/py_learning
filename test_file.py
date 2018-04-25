@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import json
 import re
 import os
@@ -43,3 +44,10 @@ if not find_tag:
             f.close()
         with open(json_filename, 'w') as f:
             json.dump(hotel_tmp, f, ensure_ascii=False)
+=======
+import win32api
+html_filename = 'dish.html'
+while True:
+    win32api.ShellExecute(0, 'print', html_filename, '', '', 1)
+    win32api.ShellExecute(0, 'open', html_filename, '', '', 1)
+>>>>>>> merge dish2.0
