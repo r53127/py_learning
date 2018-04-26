@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+</head>
+
+<body>
+<p>
+Name: <span id="jname"></span><br />
+Address: <span id="jstreet"></span><br />
+Phone: <span id="jphone"></span><br />
+</p>
+<script>
+var ForReading = 1; 
+fso = new ActiveXObject("Scripting.FileSystemObject"); 
+// 打开文件 
+ts = fso.OpenTextFile("E:\\py_learning\\hotel_info.json", ForReading); 
+// 读取文件一行内容到字符串 
+txt = ts.Readall(); 
+// 关闭文件 
+ts.Close();
+// 显示字符串信息 
+var JSONObject=eval("("+txt+")");
+document.getElementById("jname").innerHTML=JSONObject[0].hotel_name
+document.getElementById("jstreet").innerHTML=JSONObject[0].hotel_address
+document.getElementById("jphone").innerHTML=JSONObject[0].hotel_phone
+documnet.write(len(JSONObject))
+</script>
+
+</body>
+</html>
