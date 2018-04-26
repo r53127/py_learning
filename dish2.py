@@ -36,7 +36,7 @@ def generate_dish(item_tmp, item_price_tmp):
     xml_str = xml_str + "<dish><dish_name>" + item_tmp + "</dish_name>"
     xml_str = xml_str + "<dish_num>1</dish_num>"
     xml_str = xml_str + "<dish_price>" + str(item_price_tmp) + ".00</dish_price>"
-    xml_str = xml_str + "<dish_account>" + str(item_price_tmp) + ".00</dish_account></dish>" + "\n"
+    xml_str = xml_str + "<dish_account>" + str(item_price_tmp) + ".00</dish_account></dish>"
     return xml_str
 
 
@@ -108,7 +108,7 @@ while not re.match(r'[\d]+', sum_input):
 
 account = int(sum_input)
 filename = 'dish_menu.xml'
-xml_tmp = '<?xml version="1.0" encoding="utf-8"?> \n'
+xml_tmp = '<?xml version="1.0" encoding="utf-8"?>'
 
 if account <= 500:
     meal_type = '午餐'
@@ -120,7 +120,7 @@ meal_time = print_date[0:4] + '-' + print_date[4:6] + '-' + print_date[6:8] + ' 
 xml_tmp = xml_tmp + "<dish_menu hotel_name=\"" + hotelname + "\""
 xml_tmp = xml_tmp + " meal_time=\"" + meal_time + "\""
 xml_tmp = xml_tmp + " meal_account=\"" + sum_input + ".00\""
-xml_tmp = xml_tmp + " meal_type=\"" + meal_type + "\">" + "\n"
+xml_tmp = xml_tmp + " meal_type=\"" + meal_type + "\">"
 
 item_list = []
 dish_sum = 0
