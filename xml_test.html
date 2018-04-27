@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+</head>
+
+<body>
+<script>
+var ForReading = 1; 
+fso = new ActiveXObject("Scripting.FileSystemObject"); 
+// 打开文件 
+ts = fso.OpenTextFile("E:\\py_learning\\dish_menu.xml", ForReading); 
+// 读取文件一行内容到字符串 
+txt = ts.Readall(); 
+alert(txt)
+// 关闭文件 
+ts.Close();
+// 显示字符串信息 
+try //Internet Explorer
+  {
+  xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+  }
+catch(e)
+  {
+  try //Firefox, Mozilla, Opera, etc.
+    {
+    xmlDoc=document.implementation.createDocument("","",null);
+    }
+  catch(e) {alert(e.message)}
+  }
+try 
+  {
+	  xmlDoc.async=false;
+xmlDoc.loadXML(txt);
+		document.write(xmlDoc.documentElement.nodeName)
+	x=xmlDoc.getElementsByTagName("dish")[0].childNodes[0].childNodes[0];
+	txt=x.nodeValue;
+	document.write(txt);
+  }
+catch(e) {alert(e.message)}
+
+
+</script>
+
+</body>
+</html>
