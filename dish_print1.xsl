@@ -20,13 +20,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title>Untitled Document</title>
 <style type="text/css">
-.STYLE2 {
-	font-size: 30px;
-	font-family: "黑体";
-}
 .STYLE4 {
 	font-family: "华文隶书";
 	font-size: 24px;
+}
+.STYLE5 {
+	font-family: "华文宋体";
+	font-weight: bold;
 }
 </style>
 </head>
@@ -34,14 +34,14 @@
 <body>
   <table border="0" cellspacing="0" width="385">
     <tr>
-      <td colspan="5" align="center" class="STYLE2">
-	<xsl:value-of select="dish_menu/@hotel_name"/>结账单</td>
+      <td colspan="5" align="center" class="STYLE4 STYLE5">
+	<xsl:value-of select="dish_menu/@hotel_name"/></td>
       </tr>
     <tr>
-      <td colspan="5">欢迎您的光临！</td>
+      <td colspan="5"><div align="center">欢迎您的光临！</div></td>
       </tr>
     <tr>
-      <td>桌号：</td>
+      <td>餐台号：</td>
       <td id="table_no">
 		<script type="text/javascript">
 		var i=20-Math.ceil(Math.random()*10); 
@@ -49,8 +49,8 @@
 		element.innerHTML="VIP"+i;	
 		</script>	  </td>
       <td>&nbsp;</td>
-      <td>餐别：</td>
-      <td><div align="left"><xsl:value-of select="dish_menu/@meal_type"/></div></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
       <td>账单编号：</td>
@@ -63,7 +63,7 @@
 	  </script>	  </td>
     </tr>
     <tr>
-      <td>结账时间：</td>
+      <td>收银时间：</td>
       <td colspan="4"><xsl:value-of select="dish_menu/@meal_time"/></td>
       </tr>
     <tr>
@@ -89,10 +89,10 @@
         <td colspan="5"><hr style="border-top-style:dotted" /></td>
       </tr>
       <tr>
-        <td>原价合计：</td>
+        <td>应付：</td>
         <td colspan="2"><xsl:value-of select="dish_menu/@meal_account"/></td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td>优惠金额：</td>
+        <td>0</td>
       </tr>
       <tr>
         <td colspan="5"><hr style="border-top-style:dotted" /></td>
@@ -104,7 +104,7 @@
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td><strong>实收支付：</strong></td>
+        <td><strong>实收：</strong></td>
         <td colspan="2"><strong><xsl:value-of select="dish_menu/@meal_account"/></strong></td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
@@ -112,8 +112,16 @@
       <tr>
         <td colspan="5"><hr style="border-top-style:dotted" /></td>
       </tr>
+    <tr>
+      <td>电话：</td>
+      <td colspan="4"><xsl:value-of select="dish_menu/@hotel_phone"/></td>
+      </tr>
+    <tr>
+      <td>地址：</td>
+      <td colspan="4"><xsl:value-of select="dish_menu/@hotel_address"/></td>
+      </tr>
       <tr>
-        <td colspan="5" align="center" class="STYLE4">谢谢光临，欢迎惠顾！</td>
+        <td colspan="5" align="center" >第1联</td>
       </tr>
   </table>
 

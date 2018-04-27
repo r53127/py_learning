@@ -69,6 +69,10 @@ else:
     f = open(json_filename, 'r')
 
 find_tag=False
+hotel_flag=''
+hotel_address=''
+hotel_phone=''
+
 if f.read() =='':
     f.close()
 else:
@@ -82,6 +86,8 @@ else:
             continue
         else:
             find_tag = True
+            hotel_address=x['hotel_address']
+            hotel_phone=x['hotel_phone']
             break
 
 if not find_tag:
@@ -124,10 +130,19 @@ else:
 
 meal_time = print_date[0:4] + '-' + print_date[4:6] + '-' + print_date[6:8] + ' ' + generate_time(account)
 
-xml_tmp = xml_tmp + "<dish_menu hotel_name=\"" + hotelname + "\""
-xml_tmp = xml_tmp + " meal_time=\"" + meal_time + "\""
-xml_tmp = xml_tmp + " meal_account=\"" + sum_input + ".00\""
-xml_tmp = xml_tmp + " meal_type=\"" + meal_type + "\">"
+if find_tag or re.match(r'[yY]', hotel_flag):
+    xml_tmp = xml_tmp + "<dish_menu hotel_name=\"" + hotelname + "\""
+    xml_tmp = xml_tmp + " meal_time=\"" + meal_time + "\""
+    xml_tmp = xml_tmp + " meal_account=\"" + sum_input + ".00\""
+    xml_tmp = xml_tmp + " hotel_address=\""+ hotel_address + "\""
+    xml_tmp = xml_tmp + " hotel_phone=\"" + hotel_phone + "\""
+    xml_tmp = xml_tmp + " meal_type=\"" + meal_type + "\">"
+else:
+    xml_tmp = xml_tmp + "<dish_menu hotel_name=\"" + hotelname + "\""
+    xml_tmp = xml_tmp + " meal_time=\"" + meal_time + "\""
+    xml_tmp = xml_tmp + " meal_account=\"" + sum_input + ".00\""
+    xml_tmp = xml_tmp + " meal_type=\"" + meal_type + "\">"
+
 
 item_list = []
 dish_sum = 0
