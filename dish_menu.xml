@@ -3,6 +3,7 @@
 =======
 <<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?> 
+<<<<<<< HEAD
 <?xml-stylesheet type="text/xsl" href="dish_print1.xsl"?>
 <dish_menu hotel_name="打包" meal_time="2018-01-01 20:21:39" meal_account="1000.00" meal_type="晚餐">
 <dish><dish_name>时菜虾</dish_name><dish_num>1</dish_num><dish_price>155.00</dish_price><dish_account>155.00</dish_account></dish>
@@ -50,3 +51,16 @@
 >>>>>>> merge dish2.0
 </dish_menu>
 >>>>>>> 4adcc14299686c56a93e7606a9beabb2f9438791
+=======
+<dish_menu hotel_name="佰汇堂" meal_time="2018-03-01 20:57:02" meal_account="1000.00" meal_type="晚餐">
+<dish><dish_name>鲜菇扒菜胆</dish_name><dish_num>1</dish_num><dish_price>76.00</dish_price><dish_account>76.00</dish_account></dish>
+<dish><dish_name>豉汁石斑球</dish_name><dish_num>1</dish_num><dish_price>152.00</dish_price><dish_account>152.00</dish_account></dish>
+<dish><dish_name>炒杂菜</dish_name><dish_num>1</dish_num><dish_price>77.00</dish_price><dish_account>77.00</dish_account></dish>
+<dish><dish_name>蒙古牛肉</dish_name><dish_num>1</dish_num><dish_price>119.00</dish_price><dish_account>119.00</dish_account></dish>
+<dish><dish_name>椒盐排骨</dish_name><dish_num>1</dish_num><dish_price>134.00</dish_price><dish_account>134.00</dish_account></dish>
+<dish><dish_name>豉椒炒肉蟹</dish_name><dish_num>1</dish_num><dish_price>176.00</dish_price><dish_account>176.00</dish_account></dish>
+<dish><dish_name>八珍发菜扒鸭</dish_name><dish_num>1</dish_num><dish_price>104.00</dish_price><dish_account>104.00</dish_account></dish>
+<dish><dish_name>菜远炒排骨</dish_name><dish_num>1</dish_num><dish_price>118.00</dish_price><dish_account>118.00</dish_account></dish>
+<dish><dish_name>小碟</dish_name><dish_num>1</dish_num><dish_price>44.00</dish_price><dish_account>44.00</dish_account></dish>
+</dish_menu>
+>>>>>>> dish2.0

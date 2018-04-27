@@ -67,15 +67,22 @@ if not os.path.exists(json_filename):
     f = open(json_filename, 'w+')
 else:
     f = open(json_filename, 'r')
-hotel_info=json.load(f)
-for x in hotel_info:
-    y=x['hotel_name']
-    if y.find(hotelname) == -1:
-        find_tag = False
-        continue
-    else:
-        find_tag=True
-        break
+
+find_tag=False
+if f.read() =='':
+    f.close()
+else:
+    f.close()
+    f = open(json_filename, 'r')
+    hotel_info=json.load(f)
+    for x in hotel_info:
+        y=x['hotel_name']
+        if y.find(hotelname) == -1:
+            find_tag = False
+            continue
+        else:
+            find_tag = True
+            break
 
 if not find_tag:
     hotel_flag = input("是否要输入酒店信息：Y/N ? ")
