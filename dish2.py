@@ -108,7 +108,7 @@ while not re.match(r'[\d]+', sum_input):
 
 account = int(sum_input)
 filename = 'dish_menu.xml'
-xml_tmp = '<?xml version="1.0" encoding="utf-8"?>'
+xml_tmp = '<?xml version="1.0" encoding="GB2312"?>'
 
 if account <= 500:
     meal_type = '午餐'
@@ -158,7 +158,7 @@ while dish_sum < account:  # 未达到总金额一直循环
 
 xml_tmp = xml_tmp + xml_content
 xml_tmp = xml_tmp + "</dish_menu>"
-open(filename, 'w', encoding='UTF-8').write(xml_tmp)
+open(filename, 'w').write(xml_tmp)
 
 if find_tag or re.match(r'[yY]', hotel_flag):
     xsl_filename = "dish_print1.xsl"
