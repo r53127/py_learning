@@ -1,0 +1,56 @@
+<HTML>
+<HEAD><Title>HTML中的数据岛中的记录集</Title></HEAD>
+<body bkcolor=#EEEEEE text=blue bgcolor="#00FFFF">
+<Table align=center width="100%"><TR><TD align="center">
+   <h5><b><font size="4" color="#FF0000">HTML中的XML数据岛记录编辑与添加</font></b></h5>
+  </TD></TR></Table>
+<HR>
+酒店名称：<input type=text datasrc=#theXMLisland DataFLD=NAME size="76"><BR>
+　　地址：<input type=text datasrc=#theXMLisland DataFLD=Address size="76"><BR>
+　　主页：<input type=text datasrc=#theXMLisland DataFLD=HomePage size="76"><BR>
+电子邮件：<input type=text datasrc=#theXMLisland DataFLD=E-Mail size="76"><BR>
+　　电话：<input type=text datasrc=#theXMLisland DataFLD=TelePhone size="76"><BR>
+　　级别：<input type=text datasrc=#theXMLisland DataFLD=Grade size="76"><HR>
+<input id="first" TYPE=button value="<<　第一条记录" onclick="theXMLisland.recordset.moveFirst()">
+<input id="prev" TYPE=button value="<上一条记录" onclick="theXMLisland.recordset.movePrevious()">  
+<input id="next" TYPE=button value="下一条记录>" onclick="theXMLisland.recordset.moveNext()">  
+<input id="last" TYPE=button value="最后一条记录>>" onclick="theXMLisland.recordset.moveLast()">&nbsp;  
+<input id="Add" TYPE=button value="添加新记录" onclick="theXMLisland.recordset.addNew()">  
+<XML ID="theXMLisland">
+<HotelList>
+<Hotel>
+<Name>四海大酒店</Name>
+<Address>海魂路1号</Address>
+<HomePage>www.sihaohotel.com.cn</HomePage> 
+<E-Mail>master@sihaohotel.com.cn</E-Mail>
+<TelePhone>(0989)8888888</TelePhone> 
+<Grade>五星级</Grade>
+</Hotel>
+<Hotel>
+<Name>五湖宾馆</Name>
+<Address>东平路99号</Address>
+<HomePage>www.wuhu.com.cn</HomePage> 
+<E-Mail>web@wuhu.com.cn</E-Mail>
+<TelePhone>(0979)1111666</TelePhone> 
+<Grade>四星级</Grade>
+</Hotel>
+<Hotel>
+<Name>“大沙漠”宾馆</Name>
+<Address>留香路168号</Address>
+<HomePage>www.dashamohotel.com.cn</HomePage> 
+<E-Mail>master@dashamohotel.com.cn</E-Mail>
+<TelePhone>(0989)87878788</TelePhone> 
+<Grade>五星级</Grade>
+</Hotel>
+<Hotel>
+<Name>“画眉鸟”大酒店</Name>
+<Address>血海飘香路2号</Address>
+<HomePage>www.throstlehotel.com.cn</HomePage> 
+<E-Mail>chuliuxiang@throstlehotel.com.cn</E-Mail>
+<TelePhone>(099)9886666</TelePhone> 
+<Grade>五星级</Grade>
+</Hotel>
+</HotelList> 
+</XML>
+</body>  
+</HTML> 
