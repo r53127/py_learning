@@ -55,35 +55,7 @@ def generate_time(account_tmp):
 def identify_bundle(filename_tmp):
     if getattr(sys, 'frozen', False):
         # we are running in a bundle
-        print(getattr(sys, 'frozen', False))
-        frozen = 'ever so'
-        bundle_dir = sys._MEIPASS
         filename_tmp = os.path.join(sys._MEIPASS, filename_tmp)
-        print('程序正以exe方式运行!')
-        print(r'__file__ path:', __file__)
-        print(r'os.path.dirname(__file__) path:', os.path.dirname(__file__))
-        print(r'os.getcwd() path：', os.getcwd())
-        print(r'os.curdir path:', os.curdir)
-        print(r'sys._MEIPASS path:', sys._MEIPASS)
-        print(r'sys.executable path:', sys.executable)
-        print(r'sys.argv[0] path:', sys.argv[0])
-        print(r'os.path.dirname(sys.argv[0]) path:', os.path.dirname(sys.argv[0]))
-    else:
-        print(getattr(sys, 'frozen',False))
-        # we are running in a normal Python environment
-        frozen = 'not'
-        print('程序在python内运行!')
-        bundle_dir = os.path.dirname(os.path.abspath(__file__))
-        print(r'__file__ path:', __file__)
-        print(r'os.path.dirname(__file__) path:', os.path.dirname(__file__))
-        print(r'os.getcwd() path：', os.getcwd())
-        print(r'os.curdir path:', os.curdir)
-        # print(r'sys._MEIPASS path:', sys._MEIPASS)
-        print(r'sys.executable path:', sys.executable)
-        print(r'sys.argv[0] path:', sys.argv[0])
-        print(r'os.path.dirname(sys.argv[0]) path:', os.path.dirname(sys.argv[0]))
-    print('we are', frozen, 'frozen')
-    print('bundle dir is', bundle_dir)
     return filename_tmp
 
 dish_file = 'dish_menu.txt'
