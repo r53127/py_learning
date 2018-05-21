@@ -95,9 +95,8 @@ class create_xml():
         xml_tmp = xml_tmp + "</dish_menu>"
         return xml_tmp
 
-    def write_xml(self, xml_str):
-        filename = 'dish_menu.xml'
-        fo = open(filename, 'w')
+    def write_xml(self, xml_str,xml_filename):
+        fo = open(xml_filename, 'w')
         fo.write(xml_str)
         fo.close()
 
