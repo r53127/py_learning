@@ -51,3 +51,4 @@ if __name__ == "__main__":
         fo = open('hotel_info.json', 'r')
         hotel_tmp = json.load(fo)
         print(hotel_tmp)
+		fo.close()
