@@ -84,8 +84,7 @@ class create_xml():
                         else:
                             # 如果最后一道菜价小于50则菜名改为"小碟"
                             item_last = '小碟'
-                            xml_body = xml_body + self.__generate_dish(item_last,
-                                                                       self._meal_account - dish_sum + item_price)
+                            xml_body = xml_body + self.__generate_dish(item_last,self._meal_account - dish_sum + item_price)
                     item_list.append(item)
                 else:
                     continue
@@ -102,7 +101,7 @@ class create_xml():
 
 
 if __name__ == "__main__":
-    test = create_xml('**酒店', "20180310 ", 1000, '晚餐', '北二环中路', '0591-88889999')
+    test = create_xml('**酒店', "20180310 ", 1000, '晚餐')
     xml = test.create('dish_menu.txt')
     print(xml)
-    test.write_xml(xml)
+    test.write_xml(xml,'dish.xml')

@@ -5,7 +5,7 @@ import os
 
 class hotel_json():
     def __init__(self):
-        self.__json_filename = 'hotel_info.json'
+        self.__json_filename = 'hotel_info__tmp'
         if not os.path.exists(self.__json_filename):
             with open(self.__json_filename, 'w', encoding='utf-8') as fo:
                 hotel_tmp = []
@@ -21,7 +21,8 @@ class hotel_json():
                     return x['hotel_name'], x['hotel_address'], x['hotel_phone']
                 else:
                     continue
-            return False
+            else:
+                return False
 
     def append_hotel_data(self, hotel_name, hotel_address, hotel_phone):
         hotel_data = {r'hotel_name': hotel_name, r'hotel_address': hotel_address, r"hotel_phone": hotel_phone}
