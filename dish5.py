@@ -4,15 +4,16 @@
 Module implementing dish_form.
 """
 import sys
-from PyQt5.QtCore import pyqtSlot,QRegExp
-from PyQt5.QtWidgets import QWidget,QApplication,QMessageBox
+from PyQt5.QtCore import pyqtSlot,QRegExp,Qt
+from PyQt5.QtWidgets import QWidget,QApplication,QMessageBox,QDialog
 from PyQt5.QtGui import  QRegExpValidator
 from operate_hotel_json import hotel_json
 from create_dish_xml import create_xml
 from Ui_dish5 import Ui_Form
-import random
+import random,os
 from lxml import etree
 import win32api
+from Ui_hotel_form import Ui_Dialog
 
 class dish_form(QWidget, Ui_Form):
     """
@@ -28,6 +29,11 @@ class dish_form(QWidget, Ui_Form):
         super(dish_form, self).__init__(parent)
         self.setupUi(self)
 
+        self.bDialog = QDialog()
+        self.b_ui = Ui_Dialog()
+        self.b_ui.setupUi(self.bDialog)
+
+
         regx = QRegExp(r'[\d]+')
         validator = QRegExpValidator(regx, self.lineEdit)
         self.lineEdit.setValidator(validator)
@@ -39,12 +45,7 @@ class dish_form(QWidget, Ui_Form):
             y = x['hotel_name']
             self.comboBox.addItem(y)
         self.comboBox.setEditable(True)
-        self.comboBox.currentIndexChanged.connect(self.on_combobox_changed)
 
-
-
-    def on_combobox_changed(self):
-        print('aaaa')
 
     @pyqtSlot()
     def on_pushButton_clicked(self):
@@ -70,6 +71,8 @@ class dish_form(QWidget, Ui_Form):
         dish_xml.write_xml(xml_tmp, xml_filename)
 
         xsl_filename = "dish_print1.xsl"
+        if not os.path.exists(xsl_filename):
+            return
         html_filename = 'dish.html'
         xml_dom = etree.parse(xml_filename)
         xsl_dom = etree.parse(xsl_filename)
@@ -94,10 +97,23 @@ class dish_form(QWidget, Ui_Form):
         time_tmp = str(h).zfill(2) + ':' + str(m).zfill(2) + ':' + str(s).zfill(2)
         return time_tmp
 
-    @pyqtSlot(str)
-    def on_lineEdit_textChanged(self, p0):
-        print('adfasdfasdf')
-        QMessageBox.information(self,'不合格','pls reedit')
+    @pyqtSlot(int)
+    def on_checkBox_stateChanged(self, p0):
+
+        """
+        Slot documentation goes here.
+        """
+        # TODO: not implemented yet
+        # raise NotImplementedError
+        if self.checkBox.checkState()==Qt.Checked:
+            # self.bDialog.exec_()
+            hotelname=self.comboBox.currentText()
+            if hotelname:
+                self.b_ui.set_hotelname(hotelname)
+                self.bDialog.exec_()
+            else:
+                QMessageBox.information(self,'提示','名称不能为空！')
+
 
 if __name__=='__main__':
     app=QApplication(sys.argv)
@@ -105,4 +121,3 @@ if __name__=='__main__':
     form.show()
     sys.exit(app.exec_())
     
-

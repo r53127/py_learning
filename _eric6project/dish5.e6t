@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Tasks SYSTEM "Tasks-6.0.dtd">
 <!-- eric6 tasks file for project dish5 -->
-<!-- Saved: 2018-05-30, 21:06:39 -->
+<!-- Saved: 2018-05-31, 13:10:17 -->
 <Tasks version="6.0">
   <ProjectScanFilter></ProjectScanFilter>
-  <Task priority="1" completed="False" type="1" uid="{f9f41a5b-cd85-46db-9994-a2028cb5f0be}">
+  <Task priority="1" completed="False" type="1" uid="{79444039-15c1-479d-b2c6-1ce7f6f249c9}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2018-05-30, 21:06:36</Created>
+    <Created>2018-05-31, 13:10:14</Created>
     <Resource>
       <Filename>dish5.py</Filename>
-      <Linenumber>42</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1" uid="{ff0e99a8-c4dd-4ddc-a3c8-e1ff2f9ecab3}">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2018-05-30, 21:06:36</Created>
-    <Resource>
-      <Filename>dish5.py</Filename>
-      <Linenumber>97</Linenumber>
+      <Linenumber>54</Linenumber>
     </Resource>
   </Task>
 </Tasks>

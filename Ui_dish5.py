@@ -8,10 +8,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class myComboBox(QtWidgets.QComboBox):
-    def focusOutEvent(self, QFocusEvent):
-        print('激活focusout')
-
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -20,29 +16,32 @@ class Ui_Form(object):
         self.label.setGeometry(QtCore.QRect(30, 40, 72, 15))
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(Form)
-        self.label_2.setGeometry(QtCore.QRect(30, 100, 72, 15))
+        self.label_2.setGeometry(QtCore.QRect(30, 130, 72, 15))
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(Form)
-        self.label_3.setGeometry(QtCore.QRect(30, 160, 72, 15))
+        self.label_3.setGeometry(QtCore.QRect(30, 190, 72, 15))
         self.label_3.setObjectName("label_3")
         self.lineEdit = QtWidgets.QLineEdit(Form)
-        self.lineEdit.setGeometry(QtCore.QRect(110, 150, 211, 31))
+        self.lineEdit.setGeometry(QtCore.QRect(110, 180, 211, 31))
         self.lineEdit.setObjectName("lineEdit")
         self.pushButton = QtWidgets.QPushButton(Form)
-        self.pushButton.setGeometry(QtCore.QRect(70, 230, 93, 28))
+        self.pushButton.setGeometry(QtCore.QRect(70, 260, 93, 28))
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(Form)
-        self.pushButton_2.setGeometry(QtCore.QRect(230, 230, 93, 28))
+        self.pushButton_2.setGeometry(QtCore.QRect(230, 260, 93, 28))
         self.pushButton_2.setObjectName("pushButton_2")
-        self.comboBox = myComboBox(Form)
+        self.comboBox = QtWidgets.QComboBox(Form)
         self.comboBox.setGeometry(QtCore.QRect(110, 30, 211, 31))
         self.comboBox.setObjectName("comboBox")
         self.dateEdit = QtWidgets.QDateEdit(Form)
-        self.dateEdit.setGeometry(QtCore.QRect(110, 90, 211, 31))
+        self.dateEdit.setGeometry(QtCore.QRect(110, 120, 211, 31))
         self.dateEdit.setProperty("showGroupSeparator", False)
         self.dateEdit.setDateTime(QtCore.QDateTime(QtCore.QDate(2018, 1, 1), QtCore.QTime(0, 0, 0)))
         self.dateEdit.setCalendarPopup(True)
         self.dateEdit.setObjectName("dateEdit")
+        self.checkBox = QtWidgets.QCheckBox(Form)
+        self.checkBox.setGeometry(QtCore.QRect(120, 80, 91, 21))
+        self.checkBox.setObjectName("checkBox")
         self.label.setBuddy(self.comboBox)
         self.label_2.setBuddy(self.dateEdit)
         self.label_3.setBuddy(self.lineEdit)
@@ -62,6 +61,7 @@ class Ui_Form(object):
         self.label_3.setText(_translate("Form", "消费金额"))
         self.pushButton.setText(_translate("Form", "打印"))
         self.pushButton_2.setText(_translate("Form", "退出"))
+        self.checkBox.setText(_translate("Form", "保存酒店"))
 
 
 if __name__ == "__main__":

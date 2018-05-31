@@ -1,6 +1,5 @@
-from PyQt5.QtWidgets import (QWidget, QCalendarWidget,
-                             QLabel, QApplication, QVBoxLayout)
-from PyQt5.QtCore import QDate
+from PyQt5.QtWidgets import QWidget, QCheckBox, QApplication
+from PyQt5.QtCore import Qt
 import sys
 
 
@@ -12,28 +11,22 @@ class Example(QWidget):
         self.initUI()
 
     def initUI(self):
-        vbox = QVBoxLayout(self)
 
-        cal = QCalendarWidget(self)
-        cal.setGridVisible(True)
-        cal.clicked[QDate].connect(self.showDate)
+        cb = QCheckBox('Show title', self)
+        cb.move(20, 20)
+        # cb.toggle()
+        cb.stateChanged.connect(self.changeTitle)
 
-        vbox.addWidget(cal)
-
-        self.lbl = QLabel(self)
-        date = cal.selectedDate()
-        self.lbl.setText(date.toString())
-
-        vbox.addWidget(self.lbl)
-
-        self.setLayout(vbox)
-
-        self.setGeometry(300, 300, 350, 300)
-        self.setWindowTitle('Calendar')
+        self.setGeometry(300, 300, 250, 150)
+        self.setWindowTitle('QCheckBox')
         self.show()
 
-    def showDate(self, date):
-        self.lbl.setText(date.toString())
+    def changeTitle(self, state):
+
+        if state == Qt.Checked:
+            self.setWindowTitle('QCheckBox')
+        else:
+            self.setWindowTitle(' ')
 
 
 if __name__ == '__main__':
