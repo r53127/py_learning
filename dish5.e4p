@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-5.1.dtd">
+<!-- eric project file for project dish5 -->
+<!-- Saved: 2018-05-23, 23:50:24 -->
+<!-- Copyright (C) 2018 ,  -->
+<Project version="5.1">
+  <Language>en_US</Language>
+  <Hash>4dd54d5482176a54497e5ccc1895f086b184c452</Hash>
+  <ProgLanguage mixed="0">Python3</ProgLanguage>
+  <ProjectType>PyQt5</ProjectType>
+  <Version>0.1</Version>
+  <Author></Author>
+  <Email></Email>
+  <Eol index="0"/>
+  <Sources>
+    <Source>Ui_dish5.py</Source>
+    <Source>__init__.py</Source>
+    <Source>create_dish_xml.py</Source>
+    <Source>directory_traversal.py</Source>
+    <Source>dish3.1.py</Source>
+    <Source>dish3.py</Source>
+    <Source>dish4.py</Source>
+    <Source>dish5.py</Source>
+    <Source>generate_html.py</Source>
+    <Source>json_test.py</Source>
+    <Source>operate_hotel_json.py</Source>
+    <Source>pickle_test.py</Source>
+    <Source>ping_demo.py</Source>
+    <Source>print_demo.py</Source>
+    <Source>print_list.py</Source>
+    <Source>qt_test.py</Source>
+    <Source>readfile.py</Source>
+    <Source>test_file.py</Source>
+    <Source>testjson.py</Source>
+    <Source>tkinter_demo.py</Source>
+  </Sources>
+  <Forms>
+    <Form>dish5.ui</Form>
+  </Forms>
+  <Others>
+    <Other>dish_menu.txt</Other>
+    <Other>py_learning.txt</Other>
+    <Other>test.e4p</Other>
+  </Others>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.e4p" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES"/>
+    <FiletypeAssociation pattern="*.md" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.proto" type="PROTOCOLS"/>
+    <FiletypeAssociation pattern="*.py" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.py3" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw3" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.qm" type="TRANSLATIONS"/>
+    <FiletypeAssociation pattern="*.qrc" type="RESOURCES"/>
+    <FiletypeAssociation pattern="*.rst" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.ts" type="TRANSLATIONS"/>
+    <FiletypeAssociation pattern="*.txt" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.ui" type="FORMS"/>
+    <FiletypeAssociation pattern="GNUmakefile" type="OTHERS"/>
+    <FiletypeAssociation pattern="Makefile" type="OTHERS"/>
+    <FiletypeAssociation pattern="README" type="OTHERS"/>
+    <FiletypeAssociation pattern="README.*" type="OTHERS"/>
+    <FiletypeAssociation pattern="makefile" type="OTHERS"/>
+  </FiletypeAssociations>
+</Project>

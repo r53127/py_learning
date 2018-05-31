@@ -5,7 +5,7 @@ import os
 
 class hotel_json():
     def __init__(self):
-        self.__json_filename = 'hotel_info__tmp'
+        self.__json_filename = 'hotel_info.json'
         if not os.path.exists(self.__json_filename):
             with open(self.__json_filename, 'w', encoding='utf-8') as fo:
                 hotel_tmp = []
@@ -31,15 +31,20 @@ class hotel_json():
             hotel_tmp.append(hotel_data)
         with open(self.__json_filename, 'w', encoding='utf-8') as fo:
             json.dump(hotel_tmp, fo, ensure_ascii=False)
+            
+    def read_data(self):
+        with open(self.__json_filename, 'r', encoding='utf-8') as fo:
+            hotel_info = json.load(fo)
+            return hotel_info
 
 
-if __name__ == "__main__":
+if  __name__ == "__main__":
     test = hotel_json()
-    checkdata = test.check_hotel_data('**酒店')
+    checkdata = test.check_hotel_data('温泉酒店')
     if checkdata:
         print('酒店存在！', checkdata)
     else:
-        test.append_hotel_data('**酒店', "****路", "88887777")
+        test.append_hotel_data('温泉酒店', "****路", "88887777")
         fo = open('hotel_info.json', 'r', encoding='utf-8')
         hotel_tmp = json.load(fo)
         print(hotel_tmp)

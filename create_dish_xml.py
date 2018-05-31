@@ -95,9 +95,8 @@ class create_xml():
         return xml_tmp
 
     def write_xml(self, xml_str,xml_filename):
-        fo = open(xml_filename, 'w')
-        fo.write(xml_str)
-        fo.close()
+        with open(xml_filename, 'w') as fo:
+            fo.write(xml_str)
 
 
 if __name__ == "__main__":

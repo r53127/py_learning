@@ -1,6 +1,7 @@
+from PyQt5.QtWidgets import (QWidget, QCalendarWidget,
+                             QLabel, QApplication, QVBoxLayout)
+from PyQt5.QtCore import QDate
 import sys
-from PyQt5.QtWidgets import (QWidget, QLabel,
-                             QComboBox, QApplication)
 
 
 class Example(QWidget):
@@ -11,27 +12,28 @@ class Example(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.lbl = QLabel("Ubuntu", self)
+        vbox = QVBoxLayout(self)
 
-        combo = QComboBox(self)
-        combo.addItem("Ubuntu")
-        combo.addItem("Mandriva")
-        combo.addItem("Fedora")
-        combo.addItem("Arch")
-        combo.addItem("Gentoo")
+        cal = QCalendarWidget(self)
+        cal.setGridVisible(True)
+        cal.clicked[QDate].connect(self.showDate)
 
-        combo.move(50, 50)
-        self.lbl.move(50, 150)
+        vbox.addWidget(cal)
 
-        combo.activated[str].connect(self.onActivated)
+        self.lbl = QLabel(self)
+        date = cal.selectedDate()
+        self.lbl.setText(date.toString())
 
-        self.setGeometry(300, 300, 300, 200)
-        self.setWindowTitle('QComboBox')
+        vbox.addWidget(self.lbl)
+
+        self.setLayout(vbox)
+
+        self.setGeometry(300, 300, 350, 300)
+        self.setWindowTitle('Calendar')
         self.show()
 
-    def onActivated(self, text):
-        self.lbl.setText(text)
-        self.lbl.adjustSize()
+    def showDate(self, date):
+        self.lbl.setText(date.toString())
 
 
 if __name__ == '__main__':
