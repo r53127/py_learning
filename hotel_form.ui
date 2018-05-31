@@ -10,6 +10,12 @@
     <height>270</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
@@ -130,22 +136,6 @@
     <hint type="destinationlabel">
      <x>377</x>
      <y>154</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>Dialog</receiver>
-   <slot>save_hotel_info()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>126</x>
-     <y>139</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>175</x>
-     <y>136</y>
     </hint>
    </hints>
   </connection>

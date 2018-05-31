@@ -13,7 +13,7 @@ from Ui_dish5 import Ui_Form
 import random,os
 from lxml import etree
 import win32api
-from Ui_hotel_form import Ui_Dialog
+from hotel_form import hotel_Dialog
 
 class dish_form(QWidget, Ui_Form):
     """
@@ -29,22 +29,33 @@ class dish_form(QWidget, Ui_Form):
         super(dish_form, self).__init__(parent)
         self.setupUi(self)
 
-        self.bDialog = QDialog()
-        self.b_ui = Ui_Dialog()
-        self.b_ui.setupUi(self.bDialog)
+        #初始化酒店子窗口
+        self.hotelDialog=hotel_Dialog()
 
-
+        #输入金额数字校验
         regx = QRegExp(r'[\d]+')
         validator = QRegExpValidator(regx, self.lineEdit)
         self.lineEdit.setValidator(validator)
 
-        # self.lineEdit.editingFinished.connect(self.onChanged)
+        # 酒店下拉列表初始化
         hotel_json_object=hotel_json()
         hotel_info=hotel_json_object.read_data()
         for x in hotel_info:
             y = x['hotel_name']
             self.comboBox.addItem(y)
         self.comboBox.setEditable(True)
+
+    def generate_time(self, account_tmp):
+        if account_tmp < 500:
+            h = random.randrange(13, 15)
+            m = random.randrange(0, 60)
+            s = random.randrange(0, 60)
+        else:
+            h = random.randrange(19, 23)
+            m = random.randrange(0, 60)
+            s = random.randrange(0, 60)
+        time_tmp = str(h).zfill(2) + ':' + str(m).zfill(2) + ':' + str(s).zfill(2)
+        return time_tmp
 
 
     @pyqtSlot()
@@ -85,21 +96,8 @@ class dish_form(QWidget, Ui_Form):
         fo.close()
         win32api.ShellExecute(0, 'open', html_filename, '', '', 1)
 
-    def generate_time(self,account_tmp):
-        if account_tmp < 500:
-            h = random.randrange(13, 15)
-            m = random.randrange(0, 60)
-            s = random.randrange(0, 60)
-        else:
-            h = random.randrange(19, 23)
-            m = random.randrange(0, 60)
-            s = random.randrange(0, 60)
-        time_tmp = str(h).zfill(2) + ':' + str(m).zfill(2) + ':' + str(s).zfill(2)
-        return time_tmp
-
     @pyqtSlot(int)
     def on_checkBox_stateChanged(self, p0):
-
         """
         Slot documentation goes here.
         """
@@ -109,8 +107,9 @@ class dish_form(QWidget, Ui_Form):
             # self.bDialog.exec_()
             hotelname=self.comboBox.currentText()
             if hotelname:
-                self.b_ui.set_hotelname(hotelname)
-                self.bDialog.exec_()
+                self.hotelDialog.set_hotelname(hotelname)
+                # self.hotelDialog.lineEdit_3.setText(hotelname)
+                self.hotelDialog.exec_()
             else:
                 QMessageBox.information(self,'提示','名称不能为空！')
 
