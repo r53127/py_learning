@@ -57,6 +57,10 @@ class dish_form(QWidget, Ui_Form):
         time_tmp = str(h).zfill(2) + ':' + str(m).zfill(2) + ':' + str(s).zfill(2)
         return time_tmp
 
+    def identify_bundle(self,filename_tmp):
+        if getattr(sys, 'frozen', False):
+            filename_tmp = os.path.join(sys._MEIPASS, filename_tmp)
+        return filename_tmp
 
     @pyqtSlot()
     def on_pushButton_clicked(self):
@@ -69,6 +73,9 @@ class dish_form(QWidget, Ui_Form):
         selected_date=self.dateEdit.date()
         print_date=selected_date.toString("yyyyMMdd")
         sum_input=self.lineEdit.text()
+        if sum_input=='':
+            QMessageBox.information(None,'错误','金额不能为零！')
+            return
         meal_account = int(sum_input)
         if meal_account <= 500:
             meal_type = '午餐'
@@ -78,13 +85,17 @@ class dish_form(QWidget, Ui_Form):
 
         xml_filename = 'dish_menu.xml'
         dish_xml = create_xml(hotel_name, meal_time, meal_account, meal_type)
-        xml_tmp = dish_xml.create('dish_menu.txt')
+        menu_filename='dish_menu.txt'
+        menu_filename=self.identify_bundle(menu_filename)
+        xml_tmp = dish_xml.create(menu_filename)
         dish_xml.write_xml(xml_tmp, xml_filename)
 
         xsl_filename = "dish_print1.xsl"
+        xsl_filename=self.identify_bundle(xsl_filename)
         if not os.path.exists(xsl_filename):
             return
         html_filename = 'dish.html'
+    # try:
         xml_dom = etree.parse(xml_filename)
         xsl_dom = etree.parse(xsl_filename)
 
@@ -95,6 +106,10 @@ class dish_form(QWidget, Ui_Form):
         fo.write(str(html_doc))
         fo.close()
         win32api.ShellExecute(0, 'open', html_filename, '', '', 1)
+    # except BaseException as e:
+    #     print('错误是:',e)
+    # else:
+        return
 
     @pyqtSlot(int)
     def on_checkBox_stateChanged(self, p0):

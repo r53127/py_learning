@@ -49,7 +49,7 @@ class create_xml():
         while not os.path.exists(dish_menu_file):
             print("请传入有效的菜谱txt文件再继续...")
             os.system('pause')
-        xml_tmp = '<?xml version="1.0" encoding="GB2312"?>\n'
+        xml_tmp = '<?xml version="1.0" encoding="utf-8"?>\n'
         xml_tmp = xml_tmp + "<dish_menu hotel_name=\"" + self._hotel_name + "\""
         xml_tmp = xml_tmp + " meal_time=\"" + self._meal_time + "\""
         xml_tmp = xml_tmp + " meal_account=\"" + str(self._meal_account) + ".00\""
@@ -72,6 +72,7 @@ class create_xml():
             if dish_item:
                 item = dish_item.group()
                 if item not in item_list:
+                    item_list.append(item)
                     item_price = self.__generate_item_price(item)
                     dish_sum = dish_sum + item_price
                     if dish_sum <= self._meal_account:
@@ -85,17 +86,13 @@ class create_xml():
                             # 如果最后一道菜价小于50则菜名改为"小碟"
                             item_last = '小碟'
                             xml_body = xml_body + self.__generate_dish(item_last,self._meal_account - dish_sum + item_price)
-                    item_list.append(item)
-                else:
-                    continue
-            else:
-                continue
+
         xml_tmp = xml_tmp + xml_body
         xml_tmp = xml_tmp + "</dish_menu>"
         return xml_tmp
 
     def write_xml(self, xml_str,xml_filename):
-        with open(xml_filename, 'w') as fo:
+        with open(xml_filename, 'w',encoding='utf-8') as fo:
             fo.write(xml_str)
 
 
