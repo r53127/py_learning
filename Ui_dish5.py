@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.setFixedSize(396, 312)
+        Form.resize(398, 406)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -30,10 +30,10 @@ class Ui_Form(object):
         self.lineEdit.setGeometry(QtCore.QRect(110, 180, 211, 31))
         self.lineEdit.setObjectName("lineEdit")
         self.pushButton = QtWidgets.QPushButton(Form)
-        self.pushButton.setGeometry(QtCore.QRect(70, 260, 93, 28))
+        self.pushButton.setGeometry(QtCore.QRect(70, 320, 93, 28))
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(Form)
-        self.pushButton_2.setGeometry(QtCore.QRect(230, 260, 93, 28))
+        self.pushButton_2.setGeometry(QtCore.QRect(230, 320, 93, 28))
         self.pushButton_2.setObjectName("pushButton_2")
         self.comboBox = QtWidgets.QComboBox(Form)
         self.comboBox.setGeometry(QtCore.QRect(110, 30, 211, 31))
@@ -47,9 +47,19 @@ class Ui_Form(object):
         self.checkBox = QtWidgets.QCheckBox(Form)
         self.checkBox.setGeometry(QtCore.QRect(120, 80, 91, 21))
         self.checkBox.setObjectName("checkBox")
+        self.comboBox_2 = QtWidgets.QComboBox(Form)
+        self.comboBox_2.setGeometry(QtCore.QRect(110, 241, 211, 31))
+        self.comboBox_2.setObjectName("comboBox_2")
+        self.label_4 = QtWidgets.QLabel(Form)
+        self.label_4.setGeometry(QtCore.QRect(30, 250, 81, 20))
+        self.label_4.setObjectName("label_4")
+        self.pushButton_3 = QtWidgets.QPushButton(Form)
+        self.pushButton_3.setGeometry(QtCore.QRect(330, 240, 41, 28))
+        self.pushButton_3.setObjectName("pushButton_3")
         self.label.setBuddy(self.comboBox)
         self.label_2.setBuddy(self.dateEdit)
         self.label_3.setBuddy(self.lineEdit)
+        self.label_4.setBuddy(self.lineEdit)
 
         self.retranslateUi(Form)
         self.pushButton_2.clicked.connect(Form.close)
@@ -67,6 +77,8 @@ class Ui_Form(object):
         self.pushButton.setText(_translate("Form", "打印"))
         self.pushButton_2.setText(_translate("Form", "退出"))
         self.checkBox.setText(_translate("Form", "保存酒店"))
+        self.label_4.setText(_translate("Form", "打印模板："))
+        self.pushButton_3.setText(_translate("Form", "浏览"))
 
 
 if __name__ == "__main__":

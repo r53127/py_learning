@@ -5,7 +5,7 @@ Module implementing dish_form.
 """
 import sys
 from PyQt5.QtCore import pyqtSlot,QRegExp,Qt
-from PyQt5.QtWidgets import QWidget,QApplication,QMessageBox,QDialog
+from PyQt5.QtWidgets import QWidget,QApplication,QMessageBox,QFileDialog
 from PyQt5.QtGui import  QRegExpValidator
 from operate_hotel_json import hotel_json
 from create_dish_xml import create_xml
@@ -73,8 +73,12 @@ class dish_form(QWidget, Ui_Form):
         selected_date=self.dateEdit.date()
         print_date=selected_date.toString("yyyyMMdd")
         sum_input=self.lineEdit.text()
+        xsl_filename=self.comboBox_2.currentText()
         if sum_input=='':
             QMessageBox.information(None,'错误','金额不能为零！')
+            return
+        if xsl_filename == '':
+            QMessageBox.information(None, '错误', '模板不能为空！')
             return
         meal_account = int(sum_input)
         if meal_account <= 500:
@@ -90,15 +94,15 @@ class dish_form(QWidget, Ui_Form):
         xml_tmp = dish_xml.create(menu_filename)
         dish_xml.write_xml(xml_tmp, xml_filename)
 
-        xsl_filename = "dish_print1.xsl"
-        xsl_filename=self.identify_bundle(xsl_filename)
-        if not os.path.exists(xsl_filename):
-            return
+        # xsl_filename = "dish_print1.xsl"
+        # xsl_filename=self.identify_bundle(xsl_filename)
+        # if not os.path.exists(xsl_filename):
+        #     return
         html_filename = 'dish.html'
     # try:
         xml_dom = etree.parse(xml_filename)
         xsl_dom = etree.parse(xsl_filename)
-
+        # print(xsl_dom)
         transform = etree.XSLT(xsl_dom)
         html_doc = transform(xml_dom)
 
@@ -118,6 +122,7 @@ class dish_form(QWidget, Ui_Form):
         """
         # TODO: not implemented yet
         # raise NotImplementedError
+
         if self.checkBox.checkState()==Qt.Checked:
             # self.bDialog.exec_()
             hotelname=self.comboBox.currentText()
@@ -128,6 +133,20 @@ class dish_form(QWidget, Ui_Form):
             else:
                 QMessageBox.information(self,'提示','名称不能为空！')
 
+    @pyqtSlot()
+    def on_pushButton_3_clicked(self):
+        """
+        Slot documentation goes here.
+        """
+        # TODO: not implemented yet
+        # raise NotImplementedError
+        xsl_filename,filetype=QFileDialog.getOpenFileName(self,'打开模板文件',r'.',r'Xsl模板文件 (*.xsl)')
+        if xsl_filename:
+            self.comboBox_2.addItem(xsl_filename)
+            self.comboBox_2.setCurrentText(xsl_filename)
+        else:
+            QMessageBox.information(self, '提示', '请选择打印模板！')
+
 
 if __name__=='__main__':
     app=QApplication(sys.argv)
@@ -135,3 +154,4 @@ if __name__=='__main__':
     form.show()
     sys.exit(app.exec_())
     
+
