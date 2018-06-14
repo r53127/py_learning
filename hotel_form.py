@@ -25,9 +25,16 @@ class hotel_Dialog(QDialog, Ui_Dialog):
         super(hotel_Dialog, self).__init__(parent)
         self.setupUi(self)
 
-    def set_hotelname(self,hotelname):
-        self.lineEdit_3.setText(hotelname)
-        self.lineEdit_3.setReadOnly(True)
+    def set_hotelname(self,hotelname,hoteladdress='',hotelphone=''):
+        try:
+            self.lineEdit_3.setText(hotelname)
+            self.lineEdit_3.setReadOnly(True)
+            self.lineEdit.setText(hoteladdress)
+            self.lineEdit_2.setText(hotelphone)
+        except BaseException as e:
+            print('错误是:',e)
+        else:
+            return
 
     
     @pyqtSlot()
@@ -46,6 +53,12 @@ class hotel_Dialog(QDialog, Ui_Dialog):
             hotel.append_hotel_data(hotelname, hoteladdress, hotelphone)
             self.close()
         else:
-            # print('已存在')
-            QMessageBox.information(None, '提示', '酒店已存在！')
+            reply = QMessageBox.question(self,"提示",
+                                            "酒店已存在，是否重新保存？",
+                                            QMessageBox.Yes | QMessageBox.No,QMessageBox.Yes)
+            if reply==16384:
+                hotel.replace_hotel_data(hotelname, hoteladdress, hotelphone)
+                self.close()
+            else:
+                return
 

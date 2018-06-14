@@ -45,7 +45,7 @@ class Ui_Form(object):
         self.dateEdit.setCalendarPopup(True)
         self.dateEdit.setObjectName("dateEdit")
         self.checkBox = QtWidgets.QCheckBox(Form)
-        self.checkBox.setGeometry(QtCore.QRect(120, 80, 91, 21))
+        self.checkBox.setGeometry(QtCore.QRect(120, 80, 161, 21))
         self.checkBox.setObjectName("checkBox")
         self.comboBox_2 = QtWidgets.QComboBox(Form)
         self.comboBox_2.setGeometry(QtCore.QRect(110, 241, 211, 31))
@@ -76,7 +76,7 @@ class Ui_Form(object):
         self.label_3.setText(_translate("Form", "消费金额"))
         self.pushButton.setText(_translate("Form", "打印"))
         self.pushButton_2.setText(_translate("Form", "退出"))
-        self.checkBox.setText(_translate("Form", "保存酒店"))
+        self.checkBox.setText(_translate("Form", "保存及编辑酒店信息"))
         self.label_4.setText(_translate("Form", "打印模板："))
         self.pushButton_3.setText(_translate("Form", "浏览"))
 

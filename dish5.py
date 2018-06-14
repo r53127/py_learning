@@ -103,6 +103,7 @@ class dish_form(QWidget, Ui_Form):
         xml_dom = etree.parse(xml_filename)
         xsl_dom = etree.parse(xsl_filename)
         # print(xsl_dom)
+
         transform = etree.XSLT(xsl_dom)
         html_doc = transform(xml_dom)
 
@@ -127,8 +128,12 @@ class dish_form(QWidget, Ui_Form):
             # self.bDialog.exec_()
             hotelname=self.comboBox.currentText()
             if hotelname:
-                self.hotelDialog.set_hotelname(hotelname)
-                # self.hotelDialog.lineEdit_3.setText(hotelname)
+                hotel = hotel_json()
+                result=hotel.check_hotel_data(hotelname)
+                if result!=False:
+                    self.hotelDialog.set_hotelname(result[0],result[1],result[2])
+                else:
+                    self.hotelDialog.set_hotelname(hotelname)
                 self.hotelDialog.exec_()
             else:
                 QMessageBox.information(self,'提示','名称不能为空！')
@@ -140,7 +145,7 @@ class dish_form(QWidget, Ui_Form):
         """
         # TODO: not implemented yet
         # raise NotImplementedError
-        xsl_filename,filetype=QFileDialog.getOpenFileName(self,'打开模板文件',r'.',r'Xsl模板文件 (*.xsl)')
+        xsl_filename,filetype=QFileDialog.getOpenFileName(self,'打开模板文件',r'.',r'xsl模板文件 (*.xsl)')
         if xsl_filename:
             self.comboBox_2.addItem(xsl_filename)
             self.comboBox_2.setCurrentText(xsl_filename)

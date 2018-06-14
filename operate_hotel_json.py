@@ -31,6 +31,17 @@ class hotel_json():
             hotel_tmp.append(hotel_data)
         with open(self.__json_filename, 'w', encoding='utf-8') as fo:
             json.dump(hotel_tmp, fo, ensure_ascii=False)
+
+    def replace_hotel_data(self, hotel_name, hotel_address, hotel_phone):
+        hotel_data = {r'hotel_name': hotel_name, r'hotel_address': hotel_address, r"hotel_phone": hotel_phone}
+        with open(self.__json_filename, 'r', encoding='utf-8') as fo:
+            hotel_info = json.load(fo)
+            for index,value in enumerate(hotel_info):
+                if value['hotel_name'].find(hotel_name)!=-1:
+                    hotel_info[index]=hotel_data
+        with open(self.__json_filename, 'w', encoding='utf-8') as fo:
+            json.dump(hotel_info, fo, ensure_ascii=False)
+
             
     def read_data(self):
         with open(self.__json_filename, 'r', encoding='utf-8') as fo:
