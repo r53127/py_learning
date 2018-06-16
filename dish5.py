@@ -15,6 +15,7 @@ from lxml import etree
 import win32api
 from hotel_form import hotel_Dialog
 
+
 class dish_form(QWidget, Ui_Form):
     """
     Class documentation goes here.
@@ -29,8 +30,11 @@ class dish_form(QWidget, Ui_Form):
         super(dish_form, self).__init__(parent)
         self.setupUi(self)
 
+
         #初始化酒店子窗口
         self.hotelDialog=hotel_Dialog()
+        #子窗口返回时接受信号，刷新酒店列表
+        self.hotelDialog.update_hotel_Signal.connect(self.update_combox)
 
         #输入金额数字校验
         regx = QRegExp(r'[\d]+')
@@ -45,6 +49,11 @@ class dish_form(QWidget, Ui_Form):
             self.comboBox.addItem(y)
         self.comboBox.setEditable(True)
 
+    #刷新酒店列表槽函数
+    def update_combox(self,str):
+        self.comboBox.addItem(str)
+
+    #生成随机事件函数
     def generate_time(self, account_tmp):
         if account_tmp < 500:
             h = random.randrange(13, 15)
@@ -57,6 +66,8 @@ class dish_form(QWidget, Ui_Form):
         time_tmp = str(h).zfill(2) + ':' + str(m).zfill(2) + ':' + str(s).zfill(2)
         return time_tmp
 
+
+    #识别是否是pyinstaller打包文件
     def identify_bundle(self,filename_tmp):
         if getattr(sys, 'frozen', False):
             filename_tmp = os.path.join(sys._MEIPASS, filename_tmp)
@@ -87,6 +98,7 @@ class dish_form(QWidget, Ui_Form):
             meal_type = '晚餐'
         meal_time = print_date[0:4] + '-' + print_date[4:6] + '-' + print_date[6:8] + ' ' + self.generate_time(meal_account)
 
+        #随机生成菜单xml文件
         xml_filename = 'dish_menu.xml'
         dish_xml = create_xml(hotel_name, meal_time, meal_account, meal_type)
         menu_filename='dish_menu.txt'
@@ -98,6 +110,7 @@ class dish_form(QWidget, Ui_Form):
         # xsl_filename=self.identify_bundle(xsl_filename)
         # if not os.path.exists(xsl_filename):
         #     return
+        #生成格式化后的html文件
         html_filename = 'dish.html'
     # try:
         xml_dom = etree.parse(xml_filename)
@@ -123,15 +136,14 @@ class dish_form(QWidget, Ui_Form):
         """
         # TODO: not implemented yet
         # raise NotImplementedError
-
+        #显示酒店信息子窗口
         if self.checkBox.checkState()==Qt.Checked:
-            # self.bDialog.exec_()
             hotelname=self.comboBox.currentText()
             if hotelname:
                 hotel = hotel_json()
                 result=hotel.check_hotel_data(hotelname)
                 if result!=False:
-                    self.hotelDialog.set_hotelname(result[0],result[1],result[2])
+                    self.hotelDialog.set_hotelname(*result)
                 else:
                     self.hotelDialog.set_hotelname(hotelname)
                 self.hotelDialog.exec_()
@@ -145,6 +157,7 @@ class dish_form(QWidget, Ui_Form):
         """
         # TODO: not implemented yet
         # raise NotImplementedError
+        #选择模板文件
         xsl_filename,filetype=QFileDialog.getOpenFileName(self,'打开模板文件',r'.',r'xsl模板文件 (*.xsl)')
         if xsl_filename:
             self.comboBox_2.addItem(xsl_filename)

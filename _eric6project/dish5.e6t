@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Tasks SYSTEM "Tasks-6.0.dtd">
 <!-- eric6 tasks file for project dish5 -->
-<!-- Saved: 2018-06-14, 22:24:47 -->
+<!-- Saved: 2018-06-16, 10:26:27 -->
 <Tasks version="6.0">
   <ProjectScanFilter></ProjectScanFilter>
-  <Task priority="1" completed="False" type="1" uid="{7dbf5640-cf44-4f36-a52b-7e81d0a44f9a}">
+  <Task priority="1" completed="False" type="1" uid="{8f7632e2-d3e6-4c01-8d06-77913719797a}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2018-06-14, 22:20:36</Created>
+    <Created>2018-06-16, 10:26:24</Created>
     <Resource>
       <Filename>dish5.py</Filename>
       <Linenumber>70</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="1" uid="{ff28cf66-ed87-462d-82dd-61183feaa102}">
+  <Task priority="1" completed="False" type="1" uid="{0e157955-956b-4256-8b3b-baf15c14b918}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2018-06-14, 22:20:36</Created>
+    <Created>2018-06-16, 10:26:24</Created>
     <Resource>
       <Filename>dish5.py</Filename>
       <Linenumber>124</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="1" uid="{6777270c-aa14-467f-9f9d-b25a3d8a2887}">
+  <Task priority="1" completed="False" type="1" uid="{1c563898-bb1f-4d70-887c-04726dcd7819}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2018-06-14, 22:20:36</Created>
+    <Created>2018-06-16, 10:26:24</Created>
     <Resource>
       <Filename>dish5.py</Filename>
       <Linenumber>146</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="1" uid="{f61d2754-648a-4f97-8f24-23e7b7729346}">
+  <Task priority="1" completed="False" type="1" uid="{aac43ee1-f81c-4c86-a1ea-93fe091ab0ca}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2018-06-14, 22:20:36</Created>
+    <Created>2018-06-16, 10:26:24</Created>
     <Resource>
       <Filename>hotel_form.py</Filename>
-      <Linenumber>45</Linenumber>
+      <Linenumber>46</Linenumber>
     </Resource>
   </Task>
 </Tasks>

@@ -4,8 +4,8 @@
 Module implementing hotel_Dialog.
 """
 
-from PyQt5.QtCore import pyqtSlot
-from PyQt5.QtWidgets import QDialog,QMessageBox
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import QDialog,QMessageBox,QWidget
 from operate_hotel_json import hotel_json
 from Ui_hotel_form import Ui_Dialog
 
@@ -15,6 +15,7 @@ class hotel_Dialog(QDialog, Ui_Dialog):
     """
     Class documentation goes here.
     """
+    update_hotel_Signal = pyqtSignal(str)
     def __init__(self, parent=None):
         """
         Constructor
@@ -24,7 +25,13 @@ class hotel_Dialog(QDialog, Ui_Dialog):
         """
         super(hotel_Dialog, self).__init__(parent)
         self.setupUi(self)
+        # self.pushButton.clicked.connect(dish_form.update_message)
 
+    #重载关闭消息函数，发射刷新信号
+    def closeEvent(self, QCloseEvent):
+        self.update_hotel_Signal.emit(self.lineEdit_3.text())
+
+    #设置控件内容
     def set_hotelname(self,hotelname,hoteladdress='',hotelphone=''):
         try:
             self.lineEdit_3.setText(hotelname)
@@ -47,7 +54,8 @@ class hotel_Dialog(QDialog, Ui_Dialog):
         hotelname = self.lineEdit_3.text()
         hoteladdress = self.lineEdit.text()
         hotelphone = self.lineEdit_2.text()
-        # print(hotelname,hoteladdress,hotelphone)
+
+        #保存编辑后的酒店信息
         hotel = hotel_json()
         if not hotel.check_hotel_data(hotelname):
             hotel.append_hotel_data(hotelname, hoteladdress, hotelphone)
