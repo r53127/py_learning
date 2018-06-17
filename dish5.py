@@ -5,7 +5,7 @@ Module implementing dish_form.
 """
 import sys
 from PyQt5.QtCore import pyqtSlot,QRegExp,Qt
-from PyQt5.QtWidgets import QWidget,QApplication,QMessageBox,QFileDialog
+from PyQt5.QtWidgets import QWidget,QApplication,QMessageBox,QFileDialog,QComboBox
 from PyQt5.QtGui import  QRegExpValidator
 from operate_hotel_json import hotel_json
 from create_dish_xml import create_xml
@@ -51,9 +51,10 @@ class dish_form(QWidget, Ui_Form):
 
     #刷新酒店列表槽函数
     def update_combox(self,str):
-        self.comboBox.addItem(str)
+        if self.comboBox.findText(str) == -1:
+            self.comboBox.insertItem(0,str)
 
-    #生成随机事件函数
+    #生成随机时间函数
     def generate_time(self, account_tmp):
         if account_tmp < 500:
             h = random.randrange(13, 15)
