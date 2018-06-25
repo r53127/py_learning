@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -60,6 +61,7 @@ class Ui_Form(object):
         self.label_2.setBuddy(self.dateEdit)
         self.label_3.setBuddy(self.lineEdit)
         self.label_4.setBuddy(self.lineEdit)
+
 
         self.retranslateUi(Form)
         self.pushButton_2.clicked.connect(Form.close)
