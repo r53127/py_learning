@@ -101,7 +101,13 @@ class dish_form(QWidget, Ui_Form):
 
         #随机生成菜单xml文件
         xml_filename = 'dish_menu.xml'
-        dish_xml = create_xml(hotel_name, meal_time, meal_account, meal_type)
+        check_json=hotel_json()
+        check_result=check_json.check_hotel_data(hotel_name)
+        if check_result!=False:
+            meal_address=check_result[1]
+            meal_phone=check_result[2]
+        dish_xml = create_xml(hotel_name, meal_time, meal_account, meal_type,meal_address,meal_phone)
+
         menu_filename='dish_menu.txt'
         menu_filename=self.identify_bundle(menu_filename)
         xml_tmp = dish_xml.create(menu_filename)

@@ -25,20 +25,20 @@
 	font-family: "黑体";
 }
 .STYLE4 {
-	font-family: "华文隶书";
+	font-family: "楷体";
 	font-size: 24px;
 }
+.STYLE8 {font-family: "楷体"}
 </style>
 </head>
 
 <body>
   <table border="0" cellspacing="0" width="385">
     <tr>
-      <td colspan="5" align="center" class="STYLE2">
-	<xsl:value-of select="dish_menu/@hotel_name"/>结账单</td>
+      <td colspan="5" align="center" class="STYLE2"><span class="STYLE8">结账单</span></td>
       </tr>
     <tr>
-      <td colspan="5">欢迎您的光临！</td>
+      <td colspan="5">酒店名称：<xsl:value-of select="dish_menu/@hotel_name"/></td>
       </tr>
     <tr>
       <td>桌号：</td>
