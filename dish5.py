@@ -81,60 +81,64 @@ class dish_form(QWidget, Ui_Form):
         """
         # TODO: not implemented yet
         # raise NotImplementedError
-        hotel_name=self.comboBox.currentText()
-        selected_date=self.dateEdit.date()
-        print_date=selected_date.toString("yyyyMMdd")
-        sum_input=self.lineEdit.text()
-        xsl_filename=self.comboBox_2.currentText()
-        if sum_input=='':
-            QMessageBox.information(None,'错误','金额不能为零！')
-            return
-        if xsl_filename == '':
-            QMessageBox.information(None, '错误', '模板不能为空！')
-            return
-        meal_account = int(sum_input)
-        if meal_account <= 500:
-            meal_type = '午餐'
+        try:
+            hotel_name=self.comboBox.currentText()
+            selected_date=self.dateEdit.date()
+            print_date=selected_date.toString("yyyyMMdd")
+            sum_input=self.lineEdit.text()
+            xsl_filename=self.comboBox_2.currentText()
+            if sum_input=='':
+                QMessageBox.information(None,'错误','金额不能为零！')
+                return
+            if xsl_filename == '':
+                QMessageBox.information(None, '错误', '模板不能为空！')
+                return
+            meal_account = int(sum_input)
+            if meal_account <= 500:
+                meal_type = '午餐'
+            else:
+                meal_type = '晚餐'
+            meal_time = print_date[0:4] + '-' + print_date[4:6] + '-' + print_date[6:8] + ' ' + self.generate_time(meal_account)
+
+            #随机生成菜单xml文件
+            xml_filename = 'dish_menu.xml'
+            check_json=hotel_json()
+            check_result=check_json.check_hotel_data(hotel_name)
+            print(check_result)
+            if check_result!=False:
+                meal_address=check_result[1]
+                meal_phone=check_result[2]
+                dish_xml = create_xml(hotel_name, meal_time, meal_account, meal_type,meal_address,meal_phone)
+            else:
+                dish_xml = create_xml(hotel_name, meal_time, meal_account, meal_type)
+
+            menu_filename='dish_menu.txt'
+            menu_filename=self.identify_bundle(menu_filename)
+            xml_tmp = dish_xml.create(menu_filename)
+            dish_xml.write_xml(xml_tmp, xml_filename)
+
+            # xsl_filename = "dish_print1.xsl"
+            # xsl_filename=self.identify_bundle(xsl_filename)
+            # if not os.path.exists(xsl_filename):
+            #     return
+            #生成格式化后的html文件
+            html_filename = 'dish.html'
+
+            xml_dom = etree.parse(xml_filename)
+            xsl_dom = etree.parse(xsl_filename)
+            # print(xsl_dom)
+
+            transform = etree.XSLT(xsl_dom)
+            html_doc = transform(xml_dom)
+
+            fo = open(html_filename, "w", encoding='UTF-8')
+            fo.write(str(html_doc))
+            fo.close()
+            win32api.ShellExecute(0, 'open', html_filename, '', '', 1)
+        except BaseException as e:
+           print('错误是:',e)
         else:
-            meal_type = '晚餐'
-        meal_time = print_date[0:4] + '-' + print_date[4:6] + '-' + print_date[6:8] + ' ' + self.generate_time(meal_account)
-
-        #随机生成菜单xml文件
-        xml_filename = 'dish_menu.xml'
-        check_json=hotel_json()
-        check_result=check_json.check_hotel_data(hotel_name)
-        if check_result!=False:
-            meal_address=check_result[1]
-            meal_phone=check_result[2]
-        dish_xml = create_xml(hotel_name, meal_time, meal_account, meal_type,meal_address,meal_phone)
-
-        menu_filename='dish_menu.txt'
-        menu_filename=self.identify_bundle(menu_filename)
-        xml_tmp = dish_xml.create(menu_filename)
-        dish_xml.write_xml(xml_tmp, xml_filename)
-
-        # xsl_filename = "dish_print1.xsl"
-        # xsl_filename=self.identify_bundle(xsl_filename)
-        # if not os.path.exists(xsl_filename):
-        #     return
-        #生成格式化后的html文件
-        html_filename = 'dish.html'
-    # try:
-        xml_dom = etree.parse(xml_filename)
-        xsl_dom = etree.parse(xsl_filename)
-        # print(xsl_dom)
-
-        transform = etree.XSLT(xsl_dom)
-        html_doc = transform(xml_dom)
-
-        fo = open(html_filename, "w", encoding='UTF-8')
-        fo.write(str(html_doc))
-        fo.close()
-        win32api.ShellExecute(0, 'open', html_filename, '', '', 1)
-    # except BaseException as e:
-    #     print('错误是:',e)
-    # else:
-        return
+           return
 
     @pyqtSlot(int)
     def on_checkBox_stateChanged(self, p0):
