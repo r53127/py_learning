@@ -6,7 +6,7 @@ Module implementing dish_form.
 import sys
 from PyQt5.QtCore import pyqtSlot,QRegExp,Qt
 from PyQt5.QtWidgets import QWidget,QApplication,QMessageBox,QFileDialog,QComboBox
-from PyQt5.QtGui import  QRegExpValidator
+from PyQt5.QtGui import  QRegExpValidator ,QIcon
 from operate_hotel_json import hotel_json
 from create_dish_xml import create_xml
 from Ui_dish5 import Ui_Form
@@ -29,6 +29,7 @@ class dish_form(QWidget, Ui_Form):
         """
         super(dish_form, self).__init__(parent)
         self.setupUi(self)
+        self.setWindowIcon(QIcon("dish.ico"))
 
 
         #初始化酒店子窗口
