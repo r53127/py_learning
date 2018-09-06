@@ -3,17 +3,20 @@
 """
 Module implementing dish_form.
 """
+import os
+import random
 import sys
-from PyQt5.QtCore import pyqtSlot,QRegExp,Qt
-from PyQt5.QtWidgets import QWidget,QApplication,QMessageBox,QFileDialog,QComboBox
-from PyQt5.QtGui import  QRegExpValidator ,QIcon
-from operate_hotel_json import hotel_json
-from create_dish_xml import create_xml
-from Ui_dish5 import Ui_Form
-import random,os
-from lxml import etree
 import win32api
+
+from PyQt5.QtCore import pyqtSlot, QRegExp, Qt
+from PyQt5.QtGui import QRegExpValidator, QIcon
+from PyQt5.QtWidgets import QWidget, QApplication, QMessageBox, QFileDialog
+from lxml import etree
+
+from Ui_dish5 import Ui_Form
+from create_dish_xml import create_xml
 from hotel_form import hotel_Dialog
+from operate_hotel_json import hotel_json
 
 
 class dish_form(QWidget, Ui_Form):
