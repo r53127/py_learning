@@ -15,7 +15,7 @@ class hotel_Dialog(QDialog, Ui_Dialog):
     """
     Class documentation goes here.
     """
-    update_hotel_Signal = pyqtSignal(str)
+    # update_hotel_Signal = pyqtSignal(str)
     def __init__(self, parent=None):
         """
         Constructor
@@ -27,9 +27,9 @@ class hotel_Dialog(QDialog, Ui_Dialog):
         self.setupUi(self)
         # self.pushButton.clicked.connect(dish_form.update_message)
 
-    #重载关闭消息函数，发射刷新信号
-    def closeEvent(self, QCloseEvent):
-        self.update_hotel_Signal.emit(self.lineEdit_3.text())
+    # #重载关闭消息函数，发射刷新信号
+    # def closeEvent(self, QCloseEvent):
+    #     self.update_hotel_Signal.emit(self.lineEdit_3.text())
 
     #设置控件内容
     def set_hotelname(self,hotelname,hoteladdress='',hotelphone=''):
@@ -59,14 +59,16 @@ class hotel_Dialog(QDialog, Ui_Dialog):
         hotel = hotel_json()
         if not hotel.check_hotel_data(hotelname):
             hotel.append_hotel_data(hotelname, hoteladdress, hotelphone)
-            self.close()
+            # self.close()
+            self.accept()#返回1
         else:
             reply = QMessageBox.question(self,"提示",
                                             "酒店已存在，是否重新保存？",
                                             QMessageBox.Yes | QMessageBox.No,QMessageBox.Yes)
             if reply==16384:
                 hotel.replace_hotel_data(hotelname, hoteladdress, hotelphone)
-                self.close()
+                # self.close()
+                self.accept()  # 返回1
             else:
                 return
 

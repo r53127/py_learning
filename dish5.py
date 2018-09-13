@@ -37,8 +37,8 @@ class dish_form(QWidget, Ui_Form):
 
         #初始化酒店子窗口
         self.hotelDialog=hotel_Dialog()
-        #子窗口返回时接受信号，刷新酒店列表
-        self.hotelDialog.update_hotel_Signal.connect(self.initHotelList)
+        # #子窗口返回时接受信号，刷新酒店列表
+        # self.hotelDialog.update_hotel_Signal.connect(self.initHotelList)
 
         #输入金额数字校验
         regx = QRegExp(r'[\d]+')
@@ -106,7 +106,6 @@ class dish_form(QWidget, Ui_Form):
             xml_filename = 'dish_menu.xml'
             check_json=hotel_json()
             check_result=check_json.check_hotel_data(hotel_name)
-            print(check_result)
             if check_result!=False:
                 meal_address=check_result[1]
                 meal_phone=check_result[2]
@@ -159,7 +158,9 @@ class dish_form(QWidget, Ui_Form):
                     self.hotelDialog.set_hotelname(*result)
                 else:
                     self.hotelDialog.set_hotelname(hotelname)
-                self.hotelDialog.exec_()
+                confirm=self.hotelDialog.exec_()
+                if confirm:
+                    self.initHotelList()
             else:
                 QMessageBox.information(self,'提示','名称不能为空！')
 
