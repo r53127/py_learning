@@ -38,7 +38,7 @@ class dish_form(QWidget, Ui_Form):
         #初始化酒店子窗口
         self.hotelDialog=hotel_Dialog()
         #子窗口返回时接受信号，刷新酒店列表
-        self.hotelDialog.update_hotel_Signal.connect(self.update_combox)
+        self.hotelDialog.update_hotel_Signal.connect(self.initHotelList)
 
         #输入金额数字校验
         regx = QRegExp(r'[\d]+')
@@ -46,17 +46,15 @@ class dish_form(QWidget, Ui_Form):
         self.lineEdit.setValidator(validator)
 
         # 酒店下拉列表初始化
-        hotel_json_object=hotel_json()
-        hotel_info=hotel_json_object.read_data()
+        self.initHotelList()
+
+    def initHotelList(self):
+        hotel_json_object = hotel_json()
+        hotel_info = hotel_json_object.read_data()
         for x in hotel_info:
             y = x['hotel_name']
             self.comboBox.addItem(y)
         self.comboBox.setEditable(True)
-
-    #刷新酒店列表槽函数
-    def update_combox(self,str):
-        if self.comboBox.findText(str) == -1:
-            self.comboBox.insertItem(0,str)
 
     #生成随机时间函数
     def generate_time(self, account_tmp):
