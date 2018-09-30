@@ -5,10 +5,10 @@ Module implementing hotel_Dialog.
 """
 
 from PyQt5.QtCore import *
-from PyQt5.QtWidgets import QDialog,QMessageBox,QWidget
-from operate_hotel_json import hotel_json
-from Ui_hotel_form import Ui_Dialog
+from PyQt5.QtWidgets import QDialog, QMessageBox
 
+from Ui_hotel_form import Ui_Dialog
+from operate_hotel_json import hotel_json
 
 
 class hotel_Dialog(QDialog, Ui_Dialog):
