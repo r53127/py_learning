@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Tasks SYSTEM "Tasks-6.0.dtd">
 <!-- eric6 tasks file for project dish5 -->
-<!-- Saved: 2018-06-21, 09:26:19 -->
+<!-- Saved: 2018-10-04, 20:56:45 -->
 <Tasks version="6.0">
   <ProjectScanFilter></ProjectScanFilter>
-  <Task priority="1" completed="False" type="1" uid="{af8f799a-7c78-433b-a8e4-b1d82112208f}">
+  <Task priority="1" completed="False" type="1" uid="{d8769792-e735-4891-9f52-419c967cda24}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2018-06-20, 23:44:55</Created>
+    <Created>2018-10-04, 20:54:53</Created>
     <Resource>
       <Filename>dish5.py</Filename>
-      <Linenumber>82</Linenumber>
+      <Linenumber>84</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="1" uid="{f0d5077d-9640-4ffe-ade1-2797ad5e4723}">
+  <Task priority="1" completed="False" type="1" uid="{ad46d3d5-2f0a-4c0a-81d7-a94baedbf9cd}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2018-06-20, 23:44:55</Created>
+    <Created>2018-10-04, 20:54:53</Created>
     <Resource>
       <Filename>dish5.py</Filename>
-      <Linenumber>138</Linenumber>
+      <Linenumber>149</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="1" uid="{e79231f1-0a38-4d73-9085-d106bb64e847}">
+  <Task priority="1" completed="False" type="1" uid="{1f2496dd-a82b-403f-97a5-0beef2cd1a04}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2018-06-20, 23:44:55</Created>
+    <Created>2018-10-04, 20:54:53</Created>
     <Resource>
       <Filename>dish5.py</Filename>
-      <Linenumber>159</Linenumber>
+      <Linenumber>172</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="1" uid="{ad5c0377-5898-48d2-989d-e7e5387e3afa}">
+  <Task priority="1" completed="False" type="1" uid="{e07686d7-0f2f-45e5-80d8-943dcd20abf3}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2018-06-20, 23:44:55</Created>
+    <Created>2018-10-04, 20:54:53</Created>
     <Resource>
       <Filename>hotel_form.py</Filename>
       <Linenumber>52</Linenumber>
