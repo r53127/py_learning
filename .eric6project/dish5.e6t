@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Tasks SYSTEM "Tasks-6.0.dtd">
 <!-- eric6 tasks file for project dish5 -->
-<!-- Saved: 2018-10-22, 09:41:27 -->
+<!-- Saved: 2020-01-20, 11:10:53 -->
 <Tasks version="6.0">
   <ProjectScanFilter></ProjectScanFilter>
-  <Task priority="1" completed="False" type="1" uid="{ea2fcd32-e1c4-4bf5-ad49-1a890a68079b}">
+  <Task priority="1" completed="False" type="1" uid="{da0530e6-a341-4b93-bbe7-ded0822f0252}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2018-10-22, 09:41:24</Created>
+    <Created>2020-01-20, 11:10:24</Created>
     <Resource>
       <Filename>dish5.py</Filename>
       <Linenumber>84</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="1" uid="{53f4c8dd-2a25-4c0d-836d-b7170e35eefc}">
+  <Task priority="1" completed="False" type="1" uid="{cd1c3118-6d0d-4213-ac02-b7d4ef7f6e04}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2018-10-22, 09:41:24</Created>
+    <Created>2020-01-20, 11:10:24</Created>
     <Resource>
       <Filename>dish5.py</Filename>
       <Linenumber>149</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="1" uid="{3e11a0b5-e0d1-4cdf-a8f4-f905c04c9611}">
+  <Task priority="1" completed="False" type="1" uid="{48c2962d-41de-434a-89b2-7805d17b83bb}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2018-10-22, 09:41:24</Created>
+    <Created>2020-01-20, 11:10:24</Created>
     <Resource>
       <Filename>dish5.py</Filename>
       <Linenumber>172</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="1" uid="{9e479bff-24bd-43c9-94ab-4a2123994317}">
+  <Task priority="1" completed="False" type="1" uid="{5cf0b8fb-2943-40ed-8a64-308728d95a5c}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2018-10-22, 09:41:24</Created>
+    <Created>2020-01-20, 11:10:24</Created>
     <Resource>
       <Filename>hotel_form.py</Filename>
       <Linenumber>52</Linenumber>
