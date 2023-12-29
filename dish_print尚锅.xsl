@@ -51,6 +51,7 @@
       <td>&nbsp;</td>
       <td>餐别：</td>
       <td><div align="left"><xsl:value-of select="dish_menu/@meal_type"/></div></td>
+        <!--//这里的dish_menu/@meal_type是从dish_menu中取出meal_type的值,@符号引用xml文档某个元素的属性-->
     </tr>
     <tr>
       <td>账单编号：</td>
